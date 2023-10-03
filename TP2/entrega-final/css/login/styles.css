@@ -1,0 +1,162 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+h1, h2, h3{
+    margin: 0%;
+}
+
+.container {
+    height: 500px;
+    width: 900px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    border: 1px solid black;
+    flex-direction: row;
+    background-color: #1B1B1B;
+    margin: 5%;
+}
+
+#separator-line{
+    border-left: 3px solid #B45EF8;
+    border-radius: 25px;
+    height: 90%;;
+    left: 50%;
+}
+
+.container-login{
+    height: 400px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 25px;
+    background-color: rgb(246, 246, 246, .1);
+}
+
+/* BOTONES INICIAR SECION */
+
+
+.container-btn h2{
+    color: #ffffff;
+}
+
+.btn{
+    width: 250px;
+    border-radius: 30px;
+}
+
+#google{
+    height: 25px;
+    background-color: rgb(39, 39, 39);
+    border: none;
+    color: #ffffff;
+}
+
+#google:hover{
+    background-color: rgb(27, 25, 25);
+    transition: 0.5s;
+}
+
+#facebook{
+    margin-top: 5px;
+    height: 25px;
+    background-color: #3b5998;
+    border: none;
+    color: #ffffff;
+}
+
+#facebook:hover{
+    background-color: #274481;
+    transition: 0.5s;
+
+}
+
+.container-btn div{
+    margin-top: 10px;
+}
+
+.container-btn, .container-btn div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* SEPARADOR ------ o ------ */
+
+.container-btn, .separator-login, .container-form{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.separator-login{
+    display: flex;
+    align-items: center;
+}
+
+div .line {
+    border-top: 1px solid black;
+    width: 101px;
+    height: 2px;;
+    left: 50%;
+    margin: 20px;
+}
+
+/* FORMULARIO */
+
+form div{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 8px 0px;
+}
+
+#first-label{
+    margin: 0%;
+}
+
+div input{
+    margin-top: 2px;
+    height: 20px;
+    width: 238px;
+    border: none;
+    border-radius: 8px;
+    padding-left: 10px;
+}
+
+div label{
+    color: #ffffff;
+    font-size: 12px;
+}
+
+#pass-reset a{
+    display: flex;
+    justify-content: flex-end; 
+    margin-bottom: -5px; 
+    font-size: 10px;
+}
+
+div a {
+    text-decoration: none;
+    color: #CB8AD5;
+}
+
+#login {
+    height: 25px;
+    border: none;
+    padding: 0%;
+    margin: 0%;
+    background-color: #8600B5;
+    color: #ffffff;
+}
+
+#login:hover {
+    background-color: #CB8AD5;
+    transition: 0.5s;
+}
+
