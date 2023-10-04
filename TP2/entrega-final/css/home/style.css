@@ -1,0 +1,126 @@
+body{
+    margin: 0%;
+}
+
+/* HEADER */ 
+
+header{
+    height: 73px;
+    width: 100%;
+    background-color: #010101;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.container-logo{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+#logo-header{
+    height: 80px;
+}
+
+.container-buscar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    height: 30px;
+    width: 330px;
+    background-color: #B0B0B0;
+    border-radius: 25px;
+}
+
+#buscar{
+    outline: none;
+    border: none;
+    height: 28px;
+    width: 300px;
+    background-color: #B0B0B0;
+    color: #010101;
+}
+
+#buscar::placeholder{
+    color: #010101;
+}
+
+.btn-buscar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lupa{
+    height: 20px;
+}
+
+.container-user{
+    display: flex;
+    flex-direction: row ;
+    align-items: center ;
+    padding-right: 20px;
+}
+
+div h4 {
+    color: #CB8AD5;
+}
+
+div h4:hover{
+    color: #EEDBF3;
+} 
+
+#user{
+    height: 45px;
+}
+
+/* CONTENEDORES */
+
+.container-pantalla{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-derecha{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+nav{
+    height: 1000px;
+    width: 15%;
+    background-color: #1B1B1B;
+}
+
+.container-pantalla section{
+    height: 800px;
+    width: 100%;
+    background-color: #af6868;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+footer{
+    height: 200px;
+    width: 100%;
+    background-color: #535050;
+}
+
+/* CONTENEDOR JUEGO, INFO Y CARRRUSEL */
+
+.container-info{
+    background-color: aqua;
+    height: 88%;
+    width: 77%;
+
+}
+
+.carrusel-vertical{
+    background-color: rgb(42, 165, 58);
+    height: 88%;
+    width: 16%;
+}
