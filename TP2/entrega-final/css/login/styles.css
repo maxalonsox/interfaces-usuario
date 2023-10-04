@@ -46,16 +46,14 @@ h1, h2, h3{
     color: #ffffff;
 }
 
-.btn{
-    width: 250px;
-    border-radius: 30px;
-}
 
 #google{
     height: 25px;
     background-color: rgb(39, 39, 39);
     border: none;
     color: #ffffff;
+    width: 250px;
+    border-radius: 30px;
 }
 
 #google:hover{
@@ -69,6 +67,8 @@ h1, h2, h3{
     background-color: #3b5998;
     border: none;
     color: #ffffff;
+    width: 250px;
+    border-radius: 30px;
 }
 
 #facebook:hover{
@@ -100,14 +100,19 @@ h1, h2, h3{
 }
 
 div .line {
-    border-top: 1px solid black;
+    border-top: 1px solid rgb(255, 255, 255);
     width: 101px;
     height: 2px;;
     left: 50%;
     margin: 20px;
 }
 
-/* FORMULARIO */
+.separator-login span{
+    color: #ffffff;
+}
+
+
+/* FORMULARIO LOGIN*/
 
 form div{
     display: flex;
@@ -131,7 +136,7 @@ div input{
 
 div label{
     color: #ffffff;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 #pass-reset a{
@@ -146,17 +151,76 @@ div a {
     color: #CB8AD5;
 }
 
-#login {
+.btn{
     height: 25px;
     border: none;
     padding: 0%;
     margin: 0%;
     background-color: #8600B5;
     color: #ffffff;
+    width: 250px;
+    border-radius: 30px;
 }
 
 #login:hover {
     background-color: #CB8AD5;
-    transition: 0.5s;
+    transition: 0.5s ease-in;
+    scale: 1.05;
 }
 
+
+/* FORMULARIO REGISTER */
+
+.container-register{
+    height: 167px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 250px;
+    
+}
+.container-register::-webkit-scrollbar {
+    display: none;
+}
+
+#captcha{
+    width: 250px;
+    height: 55px;
+    border-radius: 10px;
+}
+
+#terminos{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#terminos input{
+    width: 40px;
+    margin: 0%;
+    opacity: 0.8;
+
+}
+
+#terminos label{
+    font-size: 10px;
+    color: #B45EF8;
+}
+
+#terminos label span{
+    color: #ffffff;
+}
+
+.change{
+    font-size: 15px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.change span{
+    color: #ffffff;
+}
