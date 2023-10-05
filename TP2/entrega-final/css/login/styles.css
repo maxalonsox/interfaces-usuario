@@ -1,4 +1,10 @@
+@font-face {
+    font-family: roboto;
+    src: url(../../font/Roboto-Regular.ttf);
+}
+
 body {
+    font-family: roboto;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -46,15 +52,25 @@ h1, h2, h3{
     color: #ffffff;
 }
 
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 250px;
+    border: none;
+    padding: 0%;
+    margin: 0%;
+    background-color: #8600B5;
+    color: #ffffff;
+    border-radius: 30px;
+    cursor: pointer;
+}
 
 #google{
-    height: 25px;
     background-color: rgb(39, 39, 39);
-    border: none;
-    color: #ffffff;
-    width: 250px;
-    border-radius: 30px;
 }
+
 
 #google:hover{
     background-color: rgb(27, 25, 25);
@@ -63,12 +79,7 @@ h1, h2, h3{
 
 #facebook{
     margin-top: 5px;
-    height: 25px;
     background-color: #3b5998;
-    border: none;
-    color: #ffffff;
-    width: 250px;
-    border-radius: 30px;
 }
 
 #facebook:hover{
@@ -151,19 +162,7 @@ div a {
     color: #CB8AD5;
 }
 
-.btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
-    border: none;
-    padding: 0%;
-    margin: 0%;
-    background-color: #8600B5;
-    color: #ffffff;
-    width: 250px;
-    border-radius: 30px;
-}
+
 
 #login:hover {
     background-color: #CB8AD5;
@@ -175,7 +174,7 @@ div a {
 /* FORMULARIO REGISTER */
 
 .container-register{
-    height: 167px;
+    height: 169px;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 250px;
@@ -222,8 +221,45 @@ div a {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    font-size: 12px;    
 }
 
 .change span{
     color: #ffffff;
 }
+
+/* LOADING */
+
+.progress{
+    position: relative;
+    height: 10px;
+    width: 0%;
+    border: 10px solid #8600B5;
+    border-radius: 15px;
+}
+.progress .color{
+    position: absolute;
+    background-color: #B45EF8;
+    width: 0px;
+    height: 10px;
+    border-radius: 15px;
+    animation: progres 5s infinite linear;    
+}
+@keyframes progres{
+    0%{
+      width: 0%;
+    }
+    25%{
+        width: 50%;
+    }
+    50%{
+        width: 75%;
+    }
+    75%{
+        width: 85%;
+    }
+    100%{
+        width: 100%;
+    }
+};
+

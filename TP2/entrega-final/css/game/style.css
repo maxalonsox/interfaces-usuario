@@ -1,3 +1,7 @@
+a{
+    text-decoration: none;
+}
+
 /* CONTENEDORES */
 
 .container-pantalla{
@@ -70,6 +74,151 @@ nav{
     height: 55%;
     width: 100%;
     border-radius: 13.5px;
+}
+
+.first-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.info-juego h2{
+    font-size: 30px;
+    color: #E2BFE8;
+}
+
+.info-juego span:hover{
+    color: #8600B5;
+    cursor: pointer;
+}
+
+
+.info-juego span, .info-juego h3{
+    font-size: 18px;
+    margin: 0px 5px;
+    color: #E2BFE8;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+    border: none;
+    padding: 0%;
+    margin-left: 5%;
+    background-color: #B240D9;
+    color: #ffffff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn h3{
+    color: #000000;
+}
+
+.btn:hover{
+    background-color: #CB8AD5;
+}
+
+#logo-compartir{
+    height: 20px;
+}
+
+/* POPUP COMPARTIR */
+
+#popUpRedes::backdrop{
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none
+}
+
+.container-compartir{
+    background-color: rgb(27, 27, 27, 0.9);
+    width: 400px;
+    height:400px;
+    border-radius: 13.5px;
+}
+
+.container-compartir .titulo{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center  ;
+}
+
+.titulo h1{
+    font-size: 25px;
+    margin: 10px;
+    margin-right: 33%;
+    color: #ffffff;
+}
+
+#cerrar-popUpRedes{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 22%;
+}
+
+.bloque-redes{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bloque-redes h1{
+    color: #CB8AD5;
+}
+
+.container-logo-redSocial{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo-redSocial{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.logo-redSocial:hover{
+    border: solid #8600B5;
+}
+
+.container-link{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0% 5%;
+}
+
+.container-link h1{
+    color: #f7f7f7;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+#link-page{
+    width: 100%;
+    height: 30px;
+    background-color: rgba(246, 246, 246, 0.2);
+    font-size: 12px;
+    border-radius: 13.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#link-page h4{
+    color: #B0B0B0;
 }
 
 /* CARRUSEL */
