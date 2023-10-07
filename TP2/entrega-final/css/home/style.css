@@ -22,8 +22,9 @@ header{
 }
 
 .container-logo{
-    padding-left: 20px;
+    margin: 0px 25px;
     padding-top: 10px;
+    width: 50%;
 }
 #logo-header{
     height: 80px;
@@ -65,24 +66,36 @@ header{
 }
 
 .container-user{
+    width: 50%;
     display: flex;
     flex-direction: row ;
+    justify-content: flex-end;
     align-items: center ;
-    margin-right: 25px;
+    margin: 0px 25px;
     cursor: pointer;
+}
+
+.container-btn-misJuegos{
+    display: flex;
+    margin-right: 50px;
+}
+
+.container-btn-misJuegos:hover{
+    translate: 0px -2px;
 }
 
 .container-user h4 {
     color: #CB8AD5;
-    margin-right: 20px;
+    margin-left: 2px;
 }
-
-.container-user h4:hover{
-    color: #EEDBF3;
-} 
 
 #user{
     height: 45px;
+}
+
+#user:hover{
+    scale: 1.12;
+    transition:  ease .5s;
 }
 
 /* POPUP USER */
