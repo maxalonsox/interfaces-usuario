@@ -22,7 +22,7 @@ nav{
 
 
 .container-pantalla section{
-    height: 1300px;
+    height: auto;
     width: 100%;
     background-color: #000000;
     display: flex;
@@ -39,7 +39,6 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
 .carrusel-vertical{
@@ -57,7 +56,7 @@ nav{
 /* JUEGO */
 
 .jugar-juego{
-    height: 42%;
+    height: 600px;
     width: 100%;
 }
 
@@ -70,15 +69,14 @@ nav{
 /* INFO JUEGO */
 
 .info-juego .container-info {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 4%;
+    margin: 4% 5%;
 }
 
 .info-juego{
     background-color: #0A0A0A;
-    height: 55%;
+    height: auto;
     width: 100%;
+    margin-top: 40px;
     border-radius: 13.5px;
 }
 
@@ -309,10 +307,137 @@ nav{
 }
 
 #gif{
-    height: 150px;
-    width: 200px;
+    height: 140px;
+    width: 230px;
 }
 
+/* GAMEPLAYS */
+
+.container-video{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.video{
+    height: 130px;
+    width: 230px;
+}
+
+/* COMENTARIOS */
+
+/* MI COMENTARIO */
+
+.container-comentario{
+    background-color: rgb(176, 176, 176, 0.3);
+    border-radius: 13.5px;
+    height: 150px;
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-end;
+}
+
+.titulo-comentario{
+    display: flex;
+    align-items: center;
+}
+
+.container-nick{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.titulo-comentario img{
+    margin-right: 10px;
+}
+
+.logo-comentario{
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.container-nick h4{
+    color: #E2BFE8;
+    padding-left: 10px;
+}
+
+.container-comentario hr{
+    margin: 0px 15px;
+    border-color: #E2BFE8;  
+}
+
+.container-comentario input{
+    margin: 5px 15px;
+    width: 770px;
+    height: auto;
+    outline: none;
+    border: none;
+    background-color: rgb(176, 176, 176, 0.0);
+    padding-top: 5px;
+    font-family: roboto;
+    font-size: 15px;
+    color: #E2BFE8;
+}
+
+.container-comentario input::placeholder{
+    color: #E2BFE8;
+}
+
+.separador-btn{
+    width: 100%;
+}
+
+.container-comentario .btn{
+    height: 30px;
+    width: 80px;
+    border-radius: 5px; 
+}
+
+#btn-enviar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 15px 15px 0px;
+}
+
+#btn-enviar h3{
+    font-size: 12px;
+    padding-right: 2px;
+    margin: 0%;
+}
+
+/* COMENTARIOS LISTA */
+
+.container-comentarios{
+    margin-top: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.container-lista-comentario h3{
+    color: #E2BFE8;
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+
+.container-lista-comentario .container-comentario{
+    align-items: flex-start;
+    height: 90px;
+    margin: 10px 0px;
+}
+
+.container-lista-comentario p{
+    color: #E2BFE8;
+    font-size: 15px;
+    margin: 5px 15px;
+}
+
+#first-comentario{
+    margin-top: 0%;
+}
 /* CARRUSEL */
 
 .carrusel{

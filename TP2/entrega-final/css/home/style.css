@@ -47,6 +47,7 @@ header{
     width: 300px;
     background-color: #B0B0B0;
     color: #010101;
+    font-family: roboto;
 }
 
 #buscar::placeholder{
