@@ -68,11 +68,13 @@ header{
     display: flex;
     flex-direction: row ;
     align-items: center ;
-    padding-right: 20px;
+    margin-right: 25px;
+    cursor: pointer;
 }
 
 .container-user h4 {
     color: #CB8AD5;
+    margin-right: 20px;
 }
 
 .container-user h4:hover{
@@ -82,6 +84,70 @@ header{
 #user{
     height: 45px;
 }
+
+/* POPUP USER */
+
+#popUpUser{
+    background-color: #1B1B1B;
+    border-color: #1B1B1B;
+    border-radius: 13.5px;
+}
+
+.container-popUpUser{
+    width: 250px;
+    height: 350px;  
+    background-color: #1B1B1B;
+    border-color: #1B1B1B;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.nav-user{
+    width: 100%;
+    height: 100%;
+}
+
+#cerrar-popUpUser{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.nav-user hr{
+    border-color: #CB8AD5;
+    margin: 5px 10%;
+    border-radius: 20px;
+}
+
+.logo-user{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.nav-user .container-nick{
+    margin: 0% 10%;
+}
+
+.container-logo-popUp{
+    display: flex;
+    align-items: center;
+    margin: 0% 10%;
+}
+
+.container-logo-popUp h4{
+    color: #CB8AD5;
+    font-size: 12px;
+    font-weight: normal;
+}
+.logo-popUp{
+    height: 30px;
+    width: 30px;
+    padding-right: 10px;
+}
+
 
 /* FOOTER */
 
