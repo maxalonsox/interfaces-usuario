@@ -93,8 +93,470 @@
             <div class="header-nav">
                 <img id="logo" class="logo" src="images/logo.svg" alt="">
             </div>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction()">ME</button>
+                <div class="dropdown-content" id="myDropdown">
+                    <ul class="dropdown-items">
+                        <li>
+                            <div class="profile-pic"></div>
+                            <span>Tú</span>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <div class="simbolo-categoria"></div>
+                            <a href="">Mi perfil</a>
+                        </li>
+                        <li>
+                            <div class="simbolo-categoria"></div>
+                            <a href="">Mi cartera</a>
+                        </li>
+                        <li>
+                            <div class="simbolo-categoria"></div>
+                            <a href="">Mi carrito</a>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <div class="simbolo-categoria"></div>
+                            <a href="">Configuración</a>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <div class="simbolo-categoria"></div>
+                            <a href="">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                    <button class="btn-cerrar-dropdown">X</button>
+                </div>
+            </div>
+            <div class="overlay" id="overlay"></div>
         </div>
     </nav>
+    <section class="juegos-recomendados">
+        <h2>Juegos recomendados para ti</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="card-grande"> <!-- Tarjeta 1 -->
+                    
+                </div>
+                <div class="cards-chicas">
+                    <div class="cards-chicas-arriba">
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                    </div>
+                    <div class="cards-chicas-abajo">
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                        <div class="card"> <!-- Tarjeta 2 -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="juegos-por-categoria">
+        <div class="carousel-container">
+            <h2>Juegos Nuevos</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Juegos en Tendencia</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>2 Jugadores</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Acción</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Aventura</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Carreras</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Cartas</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Clásicos</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Deportes</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Disparos</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Puzzle</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Estrategia</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Plataforma</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+        <div class="carousel-container">
+            <h2>Pool</h2>
+            <div class="carousel">
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+                <div class="card">
+                </div>
+            </div>
+            <button class="carousel-button prev"><</button>
+            <button class="carousel-button next">></button>
+        </div>
+    </section>
     <script src="js/script.js"></script>
 </body>
 </html>

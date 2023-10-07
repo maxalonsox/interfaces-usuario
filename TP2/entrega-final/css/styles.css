@@ -29,17 +29,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    width: 100vw;
-}
-
-.navbar {
-  opacity: 0.95;
-  background: var(--gris-800);
-  backdrop-filter: blur(10px);
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar-container input[type="checkbox"],
@@ -51,10 +41,11 @@ body {
   display: block;
   position: relative;
   height: 64px;
+  z-index: 50;
 }
 
 .navbar-container input[type="checkbox"] {
-  position: absolute;
+  position: fixed;
   display: block;
   height: 32px;
   width: 30px;
@@ -68,7 +59,7 @@ body {
   display: block;
   height: 23px;
   width: 35px;
-  position: absolute;
+  position: fixed;
   top: 17px;
   left: 20px;
   z-index: 2;
@@ -114,6 +105,7 @@ body {
   transition: transform 0.5s ease-in-out;
   font-family: 'Roboto', sans-serif;
   overflow-y: scroll;
+  position: fixed;
 }
 
 .navbar .menu-items::-webkit-scrollbar {
@@ -144,14 +136,14 @@ body {
     margin-left: 18px;
 }
 
-.navbar .menu-items li .simbolo-categoria {
+.simbolo-categoria {
     background-color: var(--color-primario);
     height: 20px;
     width: 20px;
     margin-left: 10px;
 }
 
-.navbar .menu-items .linea-divisora {
+.linea-divisora {
     border-color: var(--color-primario);
     height: 1px;
     width: 217px;
@@ -163,7 +155,6 @@ body {
   position: absolute;
   top: 5px;
   right: 15px;
-  font-size: 2rem;
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .menu-items {
@@ -183,17 +174,311 @@ body {
 }
 
 #logo {
-    transform: scale(0.6);
-    top: -23px;
-    left: 25px;
+  transform: scale(0.6);
+  top: -23px;
+  left: 25px;
 }
 
 .header-nav {
   background-color: var(--gris-800);
   height: 64px;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
 
+/* DROPDOWN */
+
+.dropdown {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 60;
+}
+
+.dropbtn {
+  background-color: var(--gris-800);
+  border: 2px solid var(--color-primario);
+  border-radius: 100%;
+  height: 54px;
+  width: 54px;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+  position: fixed;
+}
+
+.dropdown-content {
+  background-color: var(--gris-700);
+  height: 350px;
+  width: 250px;
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-right: 2px;
+  display: none;
+  padding: 20px;
+  border: 1px solid var(--gris-800);
+  position: fixed;
+}
+
+.dropdown-items li {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.dropdown-content .dropdown-items li a {
+  text-decoration: none;
+  color: var(--color-primario);
+  font-size: 16px;
+  margin-left: 18px;
+}
+
+.dropdown-content .dropdown-items li span {
+    color: var(--color-primario);
+    font-size: 16px;
+    margin-left: 18px;
+}
+
+.dropdown-content .dropdown-items .simbolo-categoria {
+    margin-left: 0px;
+}
+
+.dropdown-content .dropdown-items .linea-divisora {
+  width: 190px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.dropdown-content .dropdown-items li .profile-pic {
+  background-color: var(--color-primario);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dropdown-content .btn-cerrar-dropdown {
+  border: none;
+  background-color: var(--gris-700);
+  color: var(--color-primario);
+  font-size: 16px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  z-index: 55;
+}
+
+.juegos-recomendados {
+  background-color: var(--gris-900);
+  padding: 20px;
+  color: var(--color-primario);
+  overflow: hidden;
+}
+
+.juegos-recomendados h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.card-grande {
+  background-color: whitesmoke;
+  height: 200px;
+  width: 310px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.cards-chicas {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.cards-chicas-abajo, .cards-chicas-arriba {
+  display: flex;
+}
+
+/* Estilos para el slider y las tarjetas */
+.slider-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.slider {
+  display: inline-flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Estilos para la sección de juegos por categoría */
+.juegos-por-categoria {
+  padding: 20px;
+  background-color: var(--gris-300);
+}
+
+.juegos-por-categoria h2 {
+  font-size: 16px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Estilos para el carrusel */
+.carousel-container {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel {
+  display: inline-flex;
+  transition: transform 0.3s ease-in-out;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.card {
+  background-color: whitesmoke;
+  height: 90px;
+  width: 140px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* Estilos para los botones del carrusel */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  height: 90px;
+  width: 20px;
+  background-color: var(--gris-800);
+  opacity: 0.8;
+  color: var(--color-primario);
+  border-radius: 4px;
+  margin-top: 4.5px;
+}
+
+.carousel-button.prev {
+  left: 0;
+}
+
+.carousel-button.next {
+  right: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .navbar .menu-items {
+    transform: translate(0%);
+    min-width: 18vw;
+  }
+
+  .navbar-container input[type="checkbox"],
+.navbar-container .hamburger-lines {
+    display: none;
+  }
+
+  .navbar .menu-items li a {
+    font-size: 17px;
+  }
+
+  .navbar .menu-items li a:hover {
+    color: var(--color-primario-400);
+  }
+
+  .simbolo-categoria {
+    height: 25px;
+    width: 25px;
+  }
+
+  .logo {
+    margin-left: -55px;
+  }
+
+  .linea-divisora {
+    width: 200px;
+  }
+
+  .dropdown-content {
+    margin-right: 20px;
+    padding: 15px;
+    height: 365px;
+  }
+
+  .dropdown-content .dropdown-items li a {
+    font-size: 17px;
+  }
+
+  .dropdown-content .dropdown-items li a:hover {
+    color: var(--color-primario-400);
+  }
+
+  .dropdown-content .dropdown-items .linea-divisora {
+    width: 200px;
+  }
+
+  .dropdown-content .dropdown-items li .profile-pic {
+    width: 50px;
+    height: 50px;
+  }
+
+  .juegos-recomendados {
+    margin-left: 15vw;
+    width: 84vw;
+    overflow: visible;
+    padding: 25px;
+  }
+
+  .juegos-recomendados h2 {
+    font-size: 20px;
+  }
+
+  .juegos-por-categoria {
+    margin-left: 15vw;
+    width: 84vw;
+  }
+
+  .juegos-por-categoria h2 {
+    font-size: 20px;
+  }
+
+  .carousel-button {
+    margin-top: 7px;
+  }
+
+  .carousel-button:hover {
+    background-color: var(--gris-400);
+    color: var(--color-primario-900);
+  }
+
+}
