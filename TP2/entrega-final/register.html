@@ -26,8 +26,8 @@
                 <span>o</span>
                 <div class="line"></div>
             </div>
-            <div class="container-register" >
-                <form action="">
+            <div class="container-register"  >
+                <form id="form" action="">
                     <div id="first-label">
                         <label name="name">Nombre</label>
                         <input class="input-form" type="text" name="nickname" placeholder="Juan">
@@ -63,9 +63,12 @@
                         <input type="checkbox">
                         <label name="terminos"><span>Acepto</span> Terminos y condiciones <span>y</span> Privacidad</label>
                     </div>
-                    <div>
-                        <a class="btn" href="index.html">Registarme</a>
-                    </div>
+                    
+                    <button type="button" class="btn" id="btn-registrar">
+                        <p>Registarme</p>
+                        <img id="tick" class="esconder"  src="img/tick.svg" alt="">
+                    </button>
+                    
                     <div class="change">
                         <span>¿Ya tienes una cuenta?</span>
                         <a href="index.html">Iniciar sesion</a>
@@ -74,5 +77,6 @@
             </div>
         </div>
     </section>
+    <script type="text/javascript" src="js/register/main.js"></script>
 </body>
 </html>

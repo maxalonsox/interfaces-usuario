@@ -1,5 +1,6 @@
 'use strict';
 
+
 //POPUP USER
 let popUpUser = document.querySelector("#popUpUser");
 
@@ -8,7 +9,7 @@ document.querySelector("#btn-user").addEventListener("click", ()=>{
 });
 
 document.querySelector("#cerrar-popUpUser").addEventListener("click", ()=>{
-    popUpUser.closeModal();
+    popUpUser.close();
 });
 
 //POPUP REDES
@@ -18,6 +19,3 @@ document.querySelector("#btn-compartir").addEventListener("click", ()=>{
     popUpRedes.showModal();
 });
 
-document.querySelector("#cerrar-popUpRedes").addEventListener("click", ()=>{
-    popUpRedes.close();
-});

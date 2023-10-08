@@ -13,7 +13,15 @@
         </div>
         <div id="separator-line">
         </div>
-        <div class="container-login">
+        <div class="esconder" id="a">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div id="container-barra">
+                <div id="barra">
+                  <div id="texto-barra"></div>
+                </div>
+            </div>
+        </div>
+        <div id="container-login" class="container-login">
             <div class="container-btn">
                 <h2>Iniciar sesión</h2>
                 <div>
@@ -39,10 +47,10 @@
                     <div id="pass-reset">
                         <a href="#">Olvidé mi contraseña</a>
                     </div>
-                    <div>
-                        <a id="login" class="btn" href="game.html">Iniciar sesión</a>
-                    </div>
-                    <div class="change">
+
+                    <button type="button" id="btn-login" class="btn" href="game.html">Iniciar sesión</button>
+                    
+                     <div class="change">
                         <span>¿Aún no tienes cuenta?</span>
                         <a href="register.html">Registrate ahora</a>
                     </div>
@@ -50,6 +58,6 @@
             </div>
         </div>
     </section>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/login/main.js"></script>
 </body>
 </html>
