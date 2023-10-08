@@ -470,6 +470,11 @@ nav{
     background-color: #ffffff;
     border-radius: 13.5px;
     margin: 5px 0%;
+    cursor: pointer;
+}
+
+.box-carrusel:hover{
+    opacity: 0.5;
 }
 
 #first-box{
