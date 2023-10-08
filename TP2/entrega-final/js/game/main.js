@@ -19,3 +19,8 @@ document.querySelector("#btn-compartir").addEventListener("click", ()=>{
     popUpRedes.showModal();
 });
 
+document.querySelector("#cerrar-popUpRedes").addEventListener("click", ()=>{
+    popUpRedes.close();
+});
+
+

@@ -29,6 +29,7 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
+    margin-top: 73px;
 }
 
 /* CONTENEDOR JUEGO, INFO Y CARRRUSEL */

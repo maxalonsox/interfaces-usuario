@@ -1,6 +1,5 @@
 'use strict';
 
-
 let btnRegistrar = document.querySelector("#btn-registrar");
 btnRegistrar.addEventListener("click", a);
 
@@ -19,4 +18,3 @@ function a(){
 function NavigatotToLogin(){
     location.href='index.html'
 }
-
