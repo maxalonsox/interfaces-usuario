@@ -6,6 +6,7 @@
     <title>Good game</title>
     <link rel="stylesheet" href="css/home/style.css">
     <link rel="stylesheet" href="css/game/style.css">
+    <link rel="shortcut icon" href="img/logo-goodgame.png" />
 </head>
 <body>
     <header>
@@ -241,7 +242,7 @@
                                             </div>
                                             <p>Buenisimo juego, me encanto</p>
                                         </div>
-                                        <div class="container-comentario">
+                                        <div id="last-comentario" class="container-comentario">
                                             <div class="container-nick">
                                                 <img class="logo-comentario" src="img/foto-users/thanos.webp" alt="">
                                                 <h4>Thanos23</h4>
@@ -256,21 +257,71 @@
 
                     <div class="carrusel-vertical">
                         <div class="carrusel">
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
-                            <div class="box-carrusel"></div>
+                            <div id="first-box" class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/jump-up.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img id="last-box" src="img/juegos/gridpunk.avif" alt=""></div>
+                            
+                           <!-- <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                            <div class="box-carrusel"><img src="" alt=""></div>
+                           -->
                         </div>
                     </div>
             </section>
-            <footer>   
+           <footer>   
                 <div class="container-acerca">
                     <h2>Acerca de Good game</h2>
                     <p>

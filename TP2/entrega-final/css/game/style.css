@@ -1,3 +1,4 @@
+
 a{
     text-decoration: none;
 }
@@ -24,7 +25,7 @@ nav{
 .container-pantalla section{
     height: auto;
     width: 100%;
-    background-color: #000000;
+    background-image: url(../../img/backgound.png);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -446,12 +447,17 @@ nav{
 #first-comentario{
     margin-top: 0%;
 }
+
+#last-comentario{
+    margin-bottom: 0%;
+}
+
 /* CARRUSEL */
 
 .carrusel{
-    height: auto;
+    height: 2027.88px;
     width: 100%;
-    display: flex;
+    display: flex;  
     justify-content: start;
     align-items: center;
     flex-direction: column;
@@ -463,5 +469,19 @@ nav{
     height: 100px;
     background-color: #ffffff;
     border-radius: 13.5px;
-    margin-top: 8%;
+    margin: 5px 0%;
+}
+
+#first-box{
+    margin-top: 15px;
+}
+
+#last-box{
+    margin-bottom: 10px;
+}
+
+.box-carrusel img{
+    width: 100%;
+    height: 100%;
+    border-radius: 13.5px;
 }

@@ -10,7 +10,7 @@ function a(){
         tick.classList.remove("esconder")
     }
     btnRegistrar.classList.add("animacion-register")
-    setTimeout(Cambiar, 1500)
+    setTimeout(Cambiar, 2000)
     setTimeout(NavigatotToLogin, 2500)
     
 }
