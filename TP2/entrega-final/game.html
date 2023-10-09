@@ -64,12 +64,12 @@
         </div>
         
     </header>
-    
 
     <section class="container-pantalla">
         <nav>
     
         </nav>
+
         <div class="container-derecha">
             <section>
                     <div class="container-info-juego">
@@ -81,7 +81,7 @@
                             <div class="container-info" id="first-container">
                                 <h2>Chrono Invaders</h2>
                                 <div class="breadcrumb">
-                                    <h3><a href=""><span>Inicio</span></a> > <a href=""><span>Estrategia</span></a> > <span>Chrono Invaders</span></h3>
+                                    <h3><span id="inicio-breadcrumb">Inicio</span> > <span>Estrategia</span> > <span>Chrono Invaders</span></h3>
                                 </div>
                             </div>
                             <div class="container-info" id="container-btn-compartir">
@@ -289,7 +289,9 @@
                             
                         </div>
                     </div>
-            </section>
+                    
+            </section>  
+
            <footer>   
                 <div class="container-acerca">
                     <h2>Acerca de Good game</h2>
@@ -328,6 +330,11 @@
             </footer>
         </div>
     </section>
+
+    <dialog id="popUpLoading">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </dialog>
+
     <script type="text/javascript" src="js/game/main.js"></script>
 </body>
 </html>

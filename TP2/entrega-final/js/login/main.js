@@ -12,10 +12,13 @@ function CambiarALoading(){
     let containerLoading = document.querySelector("#a");
     containerLoading.classList.remove('esconder');
     containerLoading.classList.add('container-loading');
-    setTimeout(NavigatotToGame, 5010)
     
+    setTimeout(a, 5000);
+    function a(){
+        NavigatotTo('game.html')
+    }
 }   
 
-function NavigatotToGame(){
-    location.href='game.html'
+function NavigatotTo(url){
+    location.href = url
 }

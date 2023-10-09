@@ -28,6 +28,7 @@ header{
 }
 #logo-header{
     height: 80px;
+    cursor: pointer;
 }
 
 .container-buscar{
