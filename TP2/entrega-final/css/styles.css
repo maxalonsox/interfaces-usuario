@@ -456,7 +456,7 @@
     margin-left: 15vw;
     width: 84vw;
     overflow: visible;
-    padding: 25px;
+    padding: 40px;
   }
 
   .juegos-recomendados h2 {
@@ -466,19 +466,100 @@
   .juegos-por-categoria {
     margin-left: 15vw;
     width: 84vw;
+    opacity: 1;
+  }
+
+  .carousel-container:hover {
+    .carousel-button {
+      opacity: 0.8;
+    }
   }
 
   .juegos-por-categoria h2 {
     font-size: 20px;
+    margin-left: 10px;
   }
 
   .carousel-button {
     margin-top: 7px;
+    opacity: 0;
   }
 
   .carousel-button:hover {
     background-color: var(--gris-400);
     color: var(--color-primario-900);
+    opacity: 1;
   }
+
+  /* FOOTER */
+
+footer{
+  height: 300px;
+  width: 100%;
+  background-color: #0A0A0A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}   
+
+.container-acerca{
+  height: 80%;
+  width: 51%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.container-acerca h2{
+  color: #E2BFE8;
+  text-align: start;
+  margin: 0%;
+}
+
+.container-acerca p, .container-line-footer h3{
+  color: #E2BFE8;
+}
+
+.container-line-footer h3:hover{
+  color: #B240D9;
+  text-shadow: 1px 1px 15px rgb(124, 124, 124);
+}
+
+.container-line-footer{
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22%;
+}
+  
+.line-footer{
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid #E2BFE8;
+  border-radius: 5px;
+  height: 90%;
+  margin-right: 25px;
+}
+
+.container-red-social{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.container-red-social h3{
+  padding-left: 10px;
+}
+
+.container-line-footer a{
+  text-decoration: none;
+}
+
+.logo-footer{
+  height: 30px;
+}
 
 }
