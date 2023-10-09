@@ -32,6 +32,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* NAV-HEADER MOBILE*/
+
 .navbar-container input[type="checkbox"],
 .navbar-container .hamburger-lines {
   display: block;
@@ -287,6 +289,8 @@
   z-index: 55;
 }
 
+/* Sección juegos recomendados*/
+
 .juegos-recomendados {
   background-color: var(--gris-900);
   padding: 20px;
@@ -320,7 +324,7 @@
   display: flex;
 }
 
-/* Estilos para el slider y las tarjetas */
+/* Carrusel juegos recomendados */
 .slider-container {
   overflow: hidden;
   white-space: nowrap;
@@ -332,7 +336,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-/* Estilos para la sección de juegos por categoría */
+/* Sección juegos por categoría */
 .juegos-por-categoria {
   padding: 20px;
   background-color: var(--gris-300);
@@ -344,7 +348,7 @@
   font-weight: 500;
 }
 
-/* Estilos para el carrusel */
+/* Carrusel juegos por categoría*/
 .carousel-container {
   position: relative;
   padding: 10px;
@@ -372,7 +376,7 @@
   margin-left: 10px;
 }
 
-/* Estilos para los botones del carrusel */
+/* Botones carrusel */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -397,7 +401,23 @@
   right: 0;
 }
 
+/* Animación carrusel */
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel.skewder .card {
+  transform: skewX(-10deg);
+}
+
+.carousel.skewizq .card {
+  transform: skewX(10deg);
+}
+
+/* DESKTOP */
+
 @media screen and (min-width: 750px) {
+  /* NAV-HEADER DESKTOP */
   .navbar .menu-items {
     transform: translate(0%);
     min-width: 18vw;
@@ -429,6 +449,8 @@
     width: 200px;
   }
 
+  /* Dropdown desktop */
+
   .dropdown-content {
     margin-right: 20px;
     padding: 15px;
@@ -452,6 +474,8 @@
     height: 50px;
   }
 
+  /*Sección juegos recomendados*/
+
   .juegos-recomendados {
     margin-left: 15vw;
     width: 84vw;
@@ -462,6 +486,12 @@
   .juegos-recomendados h2 {
     font-size: 20px;
   }
+
+  .cards-chicas .card {
+    margin-left: 30px;
+  }
+
+  /*Sección juegos por categorías */
 
   .juegos-por-categoria {
     margin-left: 15vw;
@@ -491,75 +521,169 @@
     opacity: 1;
   }
 
+  /* CARDS */
+  .overlay-card {
+    height: 100%;
+    width: 100%;
+    background-color: var(--gris-900);
+    opacity: 0.8;
+    border-radius: 10px;
+    border: 2px solid var(--color-primario-700);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .overlay-card h2 {
+    color: var(--gris-100);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 100%;
+    padding: 4px;
+    margin-left: 2px;
+    margin-top: 2px;
+  }
+
+  .overlay-card .info-juego {
+    display: flex;
+    height: 35%;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .overlay-card .precio-gratis {
+    background-color: var(--color-aceptacion);
+    height: 18px;
+    width: 50px;
+    font-size: 80%;
+    font-weight: 700;
+    color: var(--gris-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6px;
+  }
+
+  .overlay-card .btn-carrito.agregar {
+    background-color: var(--color-aceptacion);
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    border: none;
+    margin-right: 5px;
+    margin-top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .btn-carrito.agregar .line1, .btn-carrito.agregar .line2 {
+    background-color: var(--gris-100);
+    height: 22px;
+    width: 4px;
+    border-radius: 5px;
+    position: absolute;
+  }
+
+  .btn-carrito.agregar .line2 {
+    transform: rotate(90deg);
+    position: absolute;
+  }
+
+  .card .label-gratis {
+    display: block;
+    height: 18px;
+    width: 60px;
+    background-color: var(--color-aceptacion);
+    margin-left: -6px;
+    margin-top: 8px;
+    text-align: center;
+    color: var(--gris-100);
+    font-size: 90%;
+    position: absolute;
+  }
+
+
+  .card:hover {
+    .overlay-card {
+      display: flex;
+    }
+
+    .label-gratis {
+      display: none;
+    }
+  }
+
   /* FOOTER */
 
-footer{
-  height: 300px;
-  width: 100%;
-  background-color: #0A0A0A;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}   
+  footer{
+    height: 300px;
+    width: 100%;
+    background-color: #0A0A0A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }   
 
-.container-acerca{
-  height: 80%;
-  width: 51%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 14px;
-}
+  .container-acerca{
+    height: 80%;
+    width: 51%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+  }
 
-.container-acerca h2{
-  color: #E2BFE8;
-  text-align: start;
-  margin: 0%;
-}
+  .container-acerca h2{
+    color: #E2BFE8;
+    text-align: start;
+    margin: 0%;
+  }
 
-.container-acerca p, .container-line-footer h3{
-  color: #E2BFE8;
-}
+  .container-acerca p, .container-line-footer h3{
+    color: #E2BFE8;
+  }
 
-.container-line-footer h3:hover{
-  color: #B240D9;
-  text-shadow: 1px 1px 15px rgb(124, 124, 124);
-}
+  .container-line-footer h3:hover{
+    color: #B240D9;
+    text-shadow: 1px 1px 15px rgb(124, 124, 124);
+  }
 
-.container-line-footer{
-  height: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 22%;
-}
-  
-.line-footer{
-  display: flex;
-  flex-direction: column;
-  border-left: 3px solid #E2BFE8;
-  border-radius: 5px;
-  height: 90%;
-  margin-right: 25px;
-}
+  .container-line-footer{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+  }
 
-.container-red-social{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+  .line-footer{
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid #E2BFE8;
+    border-radius: 5px;
+    height: 90%;
+    margin-right: 25px;
+  }
 
-.container-red-social h3{
-  padding-left: 10px;
-}
+  .container-red-social{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
-.container-line-footer a{
-  text-decoration: none;
-}
+  .container-red-social h3{
+    padding-left: 10px;
+  }
 
-.logo-footer{
-  height: 30px;
-}
+  .container-line-footer a{
+    text-decoration: none;
+  }
+
+  .logo-footer{
+    height: 30px;
+  }
 
 }

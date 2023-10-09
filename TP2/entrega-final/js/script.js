@@ -38,16 +38,18 @@ let startPosition = 0;
 let currentTranslate = 0;
 let prevTranslate = 0;
 let animationID = 0;
+let savedTranslate = 0; // Nueva variable para guardar la posición
+
 const cardWidth = 310; // Ancho de cada tarjeta
 
-slider.addEventListener('mousedown', (e) => {
+slider.addEventListener('touchstart', (e) => {
   isDragging = true;
-  startPosition = e.clientX;
+  startPosition = e.touches[0].clientX;
   slider.style.transition = 'none';
   cancelAnimationFrame(animationID);
 });
 
-slider.addEventListener('mouseup', () => {
+slider.addEventListener('touchend', () => {
   isDragging = false;
   const movedBy = currentTranslate - prevTranslate;
 
@@ -56,6 +58,8 @@ slider.addEventListener('mouseup', () => {
   } else if (movedBy > 100 && currentTranslate !== -((document.querySelectorAll('.card-grande').length - 1) * cardWidth)) {
     slideLeft();
   } else {
+    // Restauramos la última posición guardada
+    currentTranslate = savedTranslate;
     slider.style.transform = `translateX(${currentTranslate}px)`;
   }
 
@@ -63,10 +67,10 @@ slider.addEventListener('mouseup', () => {
   requestAnimationFrame(slide);
 });
 
-slider.addEventListener('mousemove', (e) => {
+slider.addEventListener('touchmove', (e) => {
   if (!isDragging) return;
 
-  const currentPosition = e.clientX;
+  const currentPosition = e.touches[0].clientX;
   currentTranslate = prevTranslate + currentPosition - startPosition;
   slider.style.transform = `translateX(${currentTranslate}px)`;
   animationID = requestAnimationFrame(slide);
@@ -94,10 +98,37 @@ function slideRight() {
   prevTranslate = currentTranslate;
   currentTranslate -= cardWidth;
   if (currentTranslate < maxTranslate) currentTranslate = maxTranslate;
+  
+  // Guardamos la posición actual antes de hacer el desplazamiento
+  savedTranslate = currentTranslate;
+  
   animationID = requestAnimationFrame(slide);
 }
 
-// JavaScript para habilitar el carrusel con soporte táctil y botones en todos los carruseles
+
+// Añade la lógica de los límites de acuerdo a la pantalla
+window.addEventListener('resize', () => {
+  const windowWidth = window.innerWidth;
+  const maxTranslate = -((document.querySelectorAll('.card-grande').length - 1) * cardWidth);
+
+  if (windowWidth <= 768) {
+    // Para pantallas pequeñas (mobile)
+    if (currentTranslate < maxTranslate) {
+      currentTranslate = maxTranslate;
+      slider.style.transform = `translateX(${currentTranslate}px)`;
+    }
+  } else {
+    // Para pantallas grandes (desktop)
+    const desktopMaxTranslate = -((document.querySelectorAll('.card-grande').length - 4) * cardWidth);
+
+    if (currentTranslate < desktopMaxTranslate) {
+      currentTranslate = desktopMaxTranslate;
+      slider.style.transform = `translateX(${currentTranslate}px)`;
+    }
+  }
+});
+
+// Funcionamiento de carrusel con botones
 const carouselContainers = document.querySelectorAll('.carousel-container');
 
 carouselContainers.forEach((container) => {
@@ -110,19 +141,33 @@ carouselContainers.forEach((container) => {
     let prevTranslate = 0;
 
     nextButton.addEventListener('click', () => {
-        const cardWidth = 200; // Ancho de la tarjeta + margen
-        const maxTranslate = -1250;
-        
-        if (currentTranslate > maxTranslate) {
-            currentTranslate -= 258;
-            updateCarousel();
-        }
+      const cardWidth = 200; // Ancho de la tarjeta + margen
+      const maxTranslate = -1250;
+      
+      if (currentTranslate > maxTranslate) {
+          currentTranslate -= 258;
+          // Agrega la clase "skew" para aplicar la animación de skew
+          carousel.classList.add('skewder');
+          updateCarousel();
+          
+          // Elimina la clase "skew" después de un tiempo (puedes ajustar el tiempo según tu preferencia)
+          setTimeout(() => {
+              carousel.classList.remove('skewder');
+          }, 300); // 300 milisegundos (0.3 segundos)
+      }
     });
-
+    
     prevButton.addEventListener('click', () => {
         if (currentTranslate !== 0) {
             currentTranslate += 258; // Ancho de la tarjeta + margen
+            // Agrega la clase "skew" para aplicar la animación de skew
+            carousel.classList.add('skewizq');
             updateCarousel();
+            
+            // Elimina la clase "skew" después de un tiempo (puedes ajustar el tiempo según tu preferencia)
+            setTimeout(() => {
+                carousel.classList.remove('skewizq');
+            }, 300); // 300 milisegundos (0.3 segundos)
         }
     });
 
@@ -163,7 +208,7 @@ carouselContainers.forEach((container) => {
     }
 });
 
-// JavaScript para habilitar el carrusel con soporte táctil
+// Funcionamiento de carrusel con tácil mobile
 const carousels = document.querySelectorAll('.carousel');
 
 carousels.forEach((carousel) => {
