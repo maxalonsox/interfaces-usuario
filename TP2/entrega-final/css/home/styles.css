@@ -304,7 +304,7 @@
   margin-bottom: 5px;
 }
 
-.card-grande {
+#card-grande {
   background-color: whitesmoke;
   height: 200px;
   width: 310px;
@@ -719,6 +719,12 @@ footer{
     text-decoration: underline;
   }
 
+  #card-grande .overlay-card h2 {
+    font-size: 160%;
+    margin-left: 4px;
+    padding: 10px;
+  }
+
   .overlay-card .info-juego {
     display: flex;
     height: 35%;
@@ -737,6 +743,13 @@ footer{
     justify-content: center;
     align-items: center;
     margin-left: 6px;
+  }
+
+  #card-grande .overlay-card .precio-gratis {
+    height: 30px;
+    width: 90px;
+    font-size: 120%;
+    margin-left: 15px;
   }
 
   .overlay-card .precio-premium {
@@ -760,6 +773,27 @@ footer{
     cursor: pointer;
   }
 
+  .overlay-card .btn-carrito.eliminar {
+    background-color: var(--color-error);
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    border: none;
+    margin-right: 5px;
+    margin-top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #card-grande .overlay-card .btn-carrito.agregar, #card-grande .overlay-card .btn-carrito.eliminar {
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+    margin-top: -25px;
+  }
+
   .btn-carrito.agregar .line1, .btn-carrito.agregar .line2 {
     background-color: var(--gris-100);
     height: 22px;
@@ -770,6 +804,20 @@ footer{
 
   .btn-carrito.agregar .line2 {
     transform: rotate(90deg);
+    position: absolute;
+  }
+
+  .btn-carrito.eliminar .line1, .btn-carrito.eliminar .line2 {
+    background-color: var(--gris-100);
+    height: 22px;
+    width: 4px;
+    border-radius: 5px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+
+  .btn-carrito.eliminar .line2 {
+    transform: rotate(-45deg);
     position: absolute;
   }
 
