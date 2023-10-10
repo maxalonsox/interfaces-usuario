@@ -15,7 +15,7 @@ function CambiarALoading(){
     
     setTimeout(a, 5000);
     function a(){
-        NavigatotTo('home.html')
+        NavigatotTo('./home.html')
     }
 }   
 

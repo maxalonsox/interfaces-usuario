@@ -56,7 +56,7 @@ function PopUpLoading(){
     popUpLoading.showModal();
     setTimeout(a, 5000);
     function a(){
-        NavigateTo('home.html');
+        NavigateTo('./home.html');
     }
 }
 
