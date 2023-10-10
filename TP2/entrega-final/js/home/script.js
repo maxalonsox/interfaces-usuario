@@ -264,3 +264,10 @@ carousels.forEach((carousel) => {
         carousel.style.transition = 'transform 0.3s ease-in-out';
     }
 });
+
+let btnCarrito = document.querySelectorAll(".btn-carrito");
+
+btnCarrito.addEventListener("click", function() {
+  btnCarrito.classList.toggle("agregar");
+  btnCarrito.classList.toggle("eliminar");
+});
