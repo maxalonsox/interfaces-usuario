@@ -6,64 +6,141 @@
     <title>Good game</title>
     <link rel="stylesheet" href="css/home/style.css">
     <link rel="stylesheet" href="css/game/style.css">
+    <link rel="stylesheet" href="css/home/styles.css">
     <link rel="shortcut icon" href="img/logo-goodgame.png" />
 </head>
 <body>
-    <header>
-        <div class="container-logo">
-            <img id="logo-header" src="img/logo-goodgame.png" alt="">
-        </div>
-        <div class="container-buscar">
-            <input type="text" name="buscar" id="buscar" placeholder="Buscar juego...">
-            <div class="btn-buscar">
-                    <img id="lupa" src="img/lupa.svg" alt="">
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
             </div>
-        </div>
-        <div  class="container-user">
+            <ul class="menu-items">
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="home.html">Inicio</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Nuevos</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Tendencias</a>
+                </li>
+                <hr class="linea-divisora">
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">2 Jugadores</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Acción</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Aventura</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Carreras</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Cartas</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Clásicos</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Deportes</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Disparos</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Estrategia</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Puzzle</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Plataforma</a>
+                </li>
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Pool</a>
+                </li>
+                <hr class="linea-divisora">
+                <li>
+                    <div class="simbolo-categoria"></div>
+                    <a href="">Contactanos</a>
+                </li>
+            </ul>
+            <div class="header-nav">
+                <img id="logo" class="logo" src="images/logo.svg" alt="">
+            </div>
+            <div class="container-buscar">
+                <input type="text" name="buscar" id="buscar" placeholder="Buscar juego...">
+                <div class="btn-buscar">
+                        <img id="lupa" src="img/lupa.svg" alt="">
+                </div>
+            </div>
             <div class="container-btn-misJuegos">
                 <img src="img/corazon.svg" alt="">
                 <h4>Mis juegos</h4>
             </div>
-            <div id="btn-user">
-                <img id="user" src="img/user.svg" alt="">
-            </div>
-            <dialog id="popUpUser">
-                <div class="container-popUpUser">
-                    <button id="cerrar-popUpUser"><img src="img/cruz.svg" alt=""></button>
-                    <div class="nav-user">
-                        <div class="container-nick">
-                            <img class="logo-user" src="img/foto-users/cod.jpeg" alt="">
-                            <h4>Tu</h4>
-                        </div>
-                       <hr>
-                        <div class="container-logo-popUp">
-                            <img class="logo-popUp" src="img/usuario.svg" alt="">
-                            <h4>Mi perfil</h4>
-                        </div>
-                        <div class="container-logo-popUp">
-                            <img class="logo-popUp" src="img/billetera.svg" alt="">
-                            <h4>Mi billetera</h4>
-                        </div>
-                        <div class="container-logo-popUp">
-                            <img class="logo-popUp" src="img/carrito-de-compras.svg" alt="">
-                            <h4>Mi carrito</h4>
-                        </div>
-                       <hr>
-                       <div class="container-logo-popUp">
-                            <img class="logo-popUp" src="img/configuracion.svg" alt="">
-                            <h4>Configuracion</h4>
-                        </div>
-                       <hr>
-                       <a href="index.html" class="container-logo-popUp">
-                            <img class="logo-popUp" id="cerrar-sesion" src="img/cerrar-sesion.svg" alt="">
-                            <h4>Cerar Sesion</h4>
-                       </a>
-                    </div>
+            <div class="dropdown" id="dropdown">
+                <button class="dropbtn" onclick="myFunction()">
+                    <img src="img/user.svg" alt="">
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <ul class="dropdown-items">
+                        <li>
+                            <img src="img/foto-users/cod.jpeg" alt="" class="profile-pic">
+                            <span>Tú</span>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <img class="simbolo-categoria" src="img/usuario.svg" alt="">
+                            <a href="">Mi perfil</a>
+                        </li>
+                        <li>
+                            <img src="img/billetera.svg" alt="" class="simbolo-categoria">
+                            <a href="">Mi cartera</a>
+                        </li>
+                        <li>
+                            <img src="img/carrito-de-compras.svg" alt="" class="simbolo-categoria">
+                            <a href="">Mi carrito</a>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <img src="img/configuracion.svg" alt="" class="simbolo-categoria">
+                            <a href="">Configuración</a>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <img src="img/cerrar-sesion.svg" alt="" class="simbolo-categoria">
+                            <a href="index.html">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                    <button class="btn-cerrar-dropdown">
+                        <img src="img/cruz.svg" alt="">
+                    </button>
                 </div>
-            </dialog>
+            </div>
+            <div class="overlay" id="overlay"></div>
         </div>
-        
-    </header>
+    </nav>
 
     <section class="container-pantalla">
         <nav>
@@ -292,7 +369,7 @@
                     
             </section>  
 
-           <footer>   
+           <footer class="footer">   
                 <div class="container-acerca">
                     <h2>Acerca de Good game</h2>
                     <p>
@@ -336,5 +413,6 @@
     </dialog>
 
     <script type="text/javascript" src="js/game/main.js"></script>
+    <script src="js/home/script.js"></script>
 </body>
 </html>

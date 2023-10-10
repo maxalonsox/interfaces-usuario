@@ -30,7 +30,6 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    margin-top: 73px;
 }
 
 /* CONTENEDOR JUEGO, INFO Y CARRRUSEL */
@@ -592,4 +591,22 @@ nav{
     100% {
         transform: rotate(360deg);
     }
+}
+
+.footer {
+    margin-left: 0;
+}
+
+.footer .container-line-footer h3 {
+    padding: 7px 0 7px 0;
+}
+
+.footer .container-line-footer .container-red-social h3 {
+    margin-left: 9px;
+}
+
+#dropdown {
+  position: absolute;
+  top: 5px;
+  right: -1300px;
 }

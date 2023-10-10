@@ -17,7 +17,7 @@ function a(){
     
     setTimeout(a, 2500)
     function a(){
-        NavigatotTo('index.html');
+        NavigatotTo('home.html');
     }
     
 }
