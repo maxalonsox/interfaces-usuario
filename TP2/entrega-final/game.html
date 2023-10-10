@@ -21,7 +21,7 @@
             <ul class="menu-items">
                 <li>
                     <div class="simbolo-categoria"></div>
-                    <a href="home.html">Inicio</a>
+                    <a id="home-nav">Inicio</a>
                 </li>
                 <li>
                     <div class="simbolo-categoria"></div>
@@ -86,7 +86,7 @@
                     <a href="">Contactanos</a>
                 </li>
             </ul>
-            <div class="header-nav">
+            <div id="logo-header" class="header-nav">
                 <img id="logo" class="logo" src="images/logo.svg" alt="">
             </div>
             <div class="container-buscar">
@@ -261,13 +261,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="container-info" id="container-gameplays">
+                            <div class="carrusel-h container-info">
                                 <h2>Gameplays</h2>
-                                <div class="container-video">
-                                    <div><img class="video"src="img/video1.png" alt=""></div>
-                                    <div><img class="video" src="img/video2.png" alt=""></div>
-                                    <div><img class="video" src="img/video3.png" alt=""></div>
+                                <div class="grande">
+                                    <img src="img/video1.png" alt="Imagen 1" class="img">
+                                    <img src="img/video2.png" alt="Imagen 2" class="img">
+                                    <img src="img/video3.png" alt="Imagen 3" class="img">
                                 </div>
+                    
+                                <ul class="puntos">
+                                    <li class="punto activo"></li>
+                                    <li class="punto"></li>
+                                    <li class="punto"></li>
+                                </ul>
                             </div>
                             <div class="container-info" id="container-comentarios">
                                 <div class="titulo-comentario">
@@ -413,6 +419,5 @@
     </dialog>
 
     <script type="text/javascript" src="js/game/main.js"></script>
-    <script src="js/home/script.js"></script>
 </body>
 </html>
