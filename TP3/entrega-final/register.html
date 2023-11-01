@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login/styles.css">
+    <title>Good Game</title>
+    <link rel="shortcut icon" href="img/logo-goodgame.png" />
+</head>
+<body>
+    <section class="container">
+        <div >
+            <img src="img/logo-goodgame.png" alt="goodgame">
+        </div>
+        <div id="separator-line">
+        </div>
+        <div class="container-login">
+            <div class="container-btn">
+                <h2>Crea tu cuenta</h2>
+                <div>
+                    <button class="btn" id="google">Iniciar sesión con Google</button>  
+                    <button class="btn" id="facebook">Continuar con Facebook</button>
+                </div>
+            </div>
+            <div class="separator-login">
+                <div class="line"></div>
+                <span>o</span>
+                <div class="line"></div>
+            </div>
+            <div class="container-register"  >
+                <form id="form" action="">
+                    <div id="first-label">
+                        <label name="name">Nombre</label>
+                        <input class="input-form" type="text" name="nickname" placeholder="Juan">
+                    </div>
+                    <div>
+                        <label name="surname">Apellido</label>
+                        <input class="input-form" type="text" name="nickname" placeholder="Perez">
+                    </div>
+                    <div>
+                        <label name="nickname">Nombre de usuario (opcional)</label>
+                        <input class="input-form" type="text" name="nickname" placeholder="nickname123...">
+                    </div>
+                    <div>
+                        <label name="age">Edad</label>
+                        <input class="input-form" type="number" placeholder="18...">
+                    </div>
+                    <div>
+                        <label name="mail">Contraseña</label>
+                        <input class="input-form" type="email" placeholder="ejemplo@gmial.com...">
+                    </div>
+                    <div>
+                        <label name="password">Contraseña</label>
+                        <input class="input-form" type="password" placeholder="******">
+                    </div>
+                    <div class="ayuda-pass">
+                        <div>
+                            <img class="icono-ayuda-pass" src="img/cerrar.svg" alt="">
+                            <h5 class="rojo">8 carácteres como mínimo</h5>
+                        </div>
+                        <div>
+                            <img class="icono-ayuda-pass" src="img/cierto.svg" alt="">
+                            <h5 class="verde">al menos un número</h5>
+                        </div>
+                        <div>
+                            <img class="icono-ayuda-pass" src="img/cerrar.svg" alt="">
+                            <h5 class="rojo">al menos una mayúscula</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <label name="password">Repetir contraseña</label>
+                        <input class="input-form" type="password" placeholder="goku123...">
+                    </div>
+                    <div>
+                        <img id="captcha" src="img/captcha.png" alt="">
+                    </div>
+                    <div id="terminos">
+                        <input type="checkbox">
+                        <label name="terminos"><span>Acepto</span> Terminos y condiciones <span>y</span> Privacidad</label>
+                    </div>
+                    
+                    <button type="button" class="btn" id="btn-registrar">
+                        <p>Registarme</p>
+                        <img id="tick" class="esconder"  src="img/tick.svg" alt="">
+                    </button>
+
+                    <div class="change">
+                        <span>¿Ya tienes una cuenta?</span>
+                        <a href="index.html">Iniciar sesion</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="js/register/main.js"></script>
+</body>
+</html>

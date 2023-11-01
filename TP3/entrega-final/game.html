@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good game</title>
+    <link rel="stylesheet" href="css/game/style.css">
+    <link rel="stylesheet" href="css/home/style.css">
+    <link rel="stylesheet" href="css/home/styles.css">
+    <link rel="shortcut icon" href="img/logo-goodgame.png" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li>
+                    <img src="images/inicio-icono.svg" alt="" class="simbolo-categoria">
+                    <a id="home-nav">Inicio</a>
+                </li>
+                <li>
+                    <img src="images/nuevos-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Nuevos</a>
+                </li>
+                <li>
+                    <img src="images/tendencias-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Tendencias</a>
+                </li>
+                <hr class="linea-divisora">
+                <li>
+                    <img src="images/dos-jugadores-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">2 Jugadores</a>
+                </li>
+                <li>
+                    <img src="images/accion-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Acción</a>
+                </li>
+                <li>
+                    <img src="images/aventura-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Aventura</a>
+                </li>
+                <li>
+                    <img src="images/carreras-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Carreras</a>
+                </li>
+                <li>
+                    <img src="images/cartas-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Cartas</a>
+                </li>
+                <li>
+                    <img src="images/clasicos-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Clásicos</a>
+                </li>
+                <li>
+                    <img src="images/deportes-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Deportes</a>
+                </li>
+                <li>
+                    <img src="images/disparos-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Disparos</a>
+                </li>
+                <li>
+                    <img src="images/estrategia-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Estrategia</a>
+                </li>
+                <li>
+                    <img src="images/puzzle-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Puzzle</a>
+                </li>
+                <li>
+                    <img src="images/plataforma-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Plataforma</a>
+                </li>
+                <li>
+                    <img src="images/pool-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Pool</a>
+                </li>
+                <hr class="linea-divisora">
+                <li>
+                    <img src="images/contactanos-icono.svg" alt="" class="simbolo-categoria">
+                    <a href="">Contactanos</a>
+                </li>
+            </ul>
+            <div id="logo-header" class="header-nav">
+                <img id="logo" class="logo" src="images/logo.svg" alt="">
+            </div>
+            <div class="container-buscar">
+                <input type="text" name="buscar" id="buscar" placeholder="Buscar juego...">
+                <div class="btn-buscar">
+                        <img id="lupa" src="img/lupa.svg" alt="">
+                </div>
+            </div>
+            <div class="container-btn-misJuegos">
+                <img src="img/corazon.svg" alt="">
+                <h4>Mis juegos</h4>
+            </div>
+            <div class="dropdown" id="dropdown">
+                <button class="dropbtn" onclick="myFunction()">
+                    <img src="img/user.svg" alt="">
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <ul class="dropdown-items">
+                        <li>
+                            <img src="img/foto-users/cod.jpeg" alt="" class="profile-pic">
+                            <span>Tú</span>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <img class="simbolo-categoria" src="img/usuario.svg" alt="">
+                            <a href="">Mi perfil</a>
+                        </li>
+                        <li>
+                            <img src="img/billetera.svg" alt="" class="simbolo-categoria">
+                            <a href="">Mi cartera</a>
+                        </li>
+                        <li>
+                            <img src="img/carrito-de-compras.svg" alt="" class="simbolo-categoria">
+                            <a href="">Mi carrito</a>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <img src="img/configuracion.svg" alt="" class="simbolo-categoria">
+                            <a href="">Configuración</a>
+                        </li>
+                        <hr class="linea-divisora">
+                        <li>
+                            <img src="img/cerrar-sesion.svg" alt="" class="simbolo-categoria">
+                            <a href="index.html">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                    <button class="btn-cerrar-dropdown">
+                        <img src="img/cruz.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="overlay" id="overlay"></div>
+        </div>
+    </nav>
+
+    <section class="container-pantalla">
+        <nav>
+    
+        </nav>
+
+        <div class="container-derecha">
+            <section>
+                    <div class="container-info-juego">
+                        <div style="display: flex;">
+                            <canvas id="myCanvas" height="520px" width="900px" style="background-color: aliceblue;"></canvas>
+                        </div>
+
+                        <!--
+                        <div class="jugar-jasduego">
+                            <img src="img/juego.png" alt="">
+                        </div>-->
+
+                        <div class="info-juego">
+                            <div class="container-info" id="first-container">
+                                <h2>Chrono Invaders</h2>
+                                <div class="breadcrumb">
+                                    <h3><span id="inicio-breadcrumb">Inicio</span> > <span>Estrategia</span> > <span>Chrono Invaders</span></h3>
+                                </div>
+                            </div>
+                            <div class="container-info" id="container-btn-compartir">
+                                <button class="btn" id="btn-compartir" href="">
+                                    <img id="logo-compartir" src="img/compartir.svg" alt="">
+                                    <h3>Compartir</h3>
+                                </button>
+                                <dialog id="popUpRedes">
+                                    <div class="container-compartir">
+                                        <div class="titulo">
+                                            <h1>Compartir</h1>
+                                            <button id="cerrar-popUpRedes"><img src="img/cruz.svg" alt=""></button>
+                                        </div>
+                                        <div class="bloque-redes">
+                                            <div class="container-logo-redSocial">
+                                                <img class="logo-redSocial" src="img/twitter.jpeg" alt="">
+                                                <h1>Twitter</h1>
+                                            </div>
+                                            <div class="container-logo-redSocial">
+                                                <img class="logo-redSocial" src="img/logo-facebook.webp" alt="">
+                                                <h1>Facebook</h1>
+                                            </div>
+                                            <div class="container-logo-redSocial">
+                                                <img class="logo-redSocial" src="img/instagram.webp" alt="">
+                                                <h1>Instagram</h1>
+                                            </div>
+                                            <div class="container-logo-redSocial">
+                                                <img class="logo-redSocial" src="img/discord.png" alt="">
+                                                <h1>Discord</h1>
+                                            </div>
+                                        </div>
+                                        <div class="bloque-redes">
+                                            <div class="container-logo-redSocial">
+                                                <img class="logo-redSocial" src="img/WhatsApp.png" alt="">
+                                                <h1>Twitter</h1>
+                                            </div>
+                                            <div class="container-logo-redSocial">
+                                                <img class="logo-redSocial" src="img/mensseger.png" alt="">
+                                                <h1>Twitter</h1>
+                                            </div>
+                                            <div class="container-logo-redSocial">
+                                                <img class="logo-redSocial" src="img/telegram.png" alt="">
+                                                <h1>Twitter</h1>
+                                            </div>
+                                            <div class="container-logo-redSocial">
+                                                <img class="logo-redSocial" src="img/gmail.jpg" alt="">
+                                                <h1>Twitter</h1>
+                                            </div>
+                                        </div>
+                                        <div class="container-link">
+                                            <h1>Link de la pagina</h1>
+                                            <div id="link-page"><h4>https://www.goodgame.com/chrono-invaders</h4></div>
+                                        </div>
+                                    </div>
+                                </dialog>
+                            </div>
+                            <div class="container-info" id="container-queEs">
+                                <h2>¿Que es Chrono Invaders?</h2>
+                                <p>Es un juego de 4 en línea que mezcla viajes en el tiempo con una invasión de seres de otras dimensiones. Los jugadores eligen entre dos facciones: los “Viajeros del tiempo” y los “Invasores de otra dimensión”. El objetivo de los Viajeros es conectar cuatro máquinas del tiempo en línea para activar un portal hacia el pasado y prevenir la invasión. Por otro lado, los Invasores buscan conectar cuatro de sus Jefes en línea para apoderarse de la Tierra en esta dimensión. <br>
+                                   Los jugadores compiten por turnos en un tablero, donde cada movimiento cuenta. El tiempo es crucial, ya que los Viajeros luchan por acelerar su viaje al pasado mientras los Invasores trabajan para asegurar su dominio en el presente. “Chrono Invaders” ofrece una emocionante batalla a través del tiempo y las dimensiones donde la estrategia y la destreza deciden el destino de la Tierra. ¿Quién prevalecerá en esta épica lucha?
+                                </p>
+                            </div>
+                            <div class="container-info" id="container-controles">
+                                <h2>Controles</h2>
+                                <div class="controles">
+                                    <div id="teclado">
+                                        <h3>Teclado</h3>
+                                            <div class="container-teclas">
+                                                <div class="container-der-izq">
+                                                    <h3>Moverse</h3>
+                                                    <div class="teclas">
+                                                        <div>
+                                                            <img src="img/izquierda.svg" alt="">
+                                                        </div>
+                                                        <div>
+                                                            <img src="img/derecha.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="container-der-izq">
+                                                    <h3>Seleccionar</h3>
+                                                    <div class="teclas">
+                                                        <div>
+                                                            <img src="img/enter.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                    <div class="line-controles"></div>
+                                    <div id="mouse">
+                                        <h3>Mouse</h3>
+                                        <div class="container-img">
+                                            <img id="gif" src="img/gif-4enLinea.gif" alt="">
+                                            <div>
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carrusel-h container-info">
+                                <h2>Gameplays</h2>
+                                <div class="grande">
+                                    <img src="img/video1.png" alt="Imagen 1" class="img">
+                                    <img src="img/video2.png" alt="Imagen 2" class="img">
+                                    <img src="img/video3.png" alt="Imagen 3" class="img">
+                                </div>
+                    
+                                <ul class="puntos">
+                                    <li class="punto activo"></li>
+                                    <li class="punto"></li>
+                                    <li class="punto"></li>
+                                </ul>
+                            </div>
+                            <div class="container-info" id="container-comentarios">
+                                <div class="titulo-comentario">
+                                    <img src="img/comentario.svg" alt="">
+                                    <h2>Comentarios</h2>
+                                </div>
+                                <div class="container-comentario">
+                                    <div class="separador-btn">
+                                        <div class="container-nick">
+                                            <img class="logo-comentario" src="img/foto-users/cod.jpeg" alt="">
+                                            <h4>Tu</h4>
+                                        </div>
+                                        <hr>
+                                        <input type="text" placeholder="Escribe tu opinión sobre el este juego...">
+                                    </div>
+                                    <button class="btn" id="btn-enviar" href="">
+                                        <h3>Enviar</h3>
+                                        <img src="img/enviar.svg" alt="">
+                                    </button>
+                                </div>
+                                <div class="container-lista-comentario">
+                                    <h3>Ultimos comentarios</h3>
+                                    <div class="container-comentarios">
+                                        <div class="container-comentario" id="first-comentario">
+                                            <div class="container-nick">
+                                                <img class="logo-comentario" src="img/foto-users/shadow-blade.jfif" alt="">
+                                                <h4>ShadowBlade</h4>
+                                            </div>
+                                            <p>Muy buen juego! 10/10</p>
+                                        </div>
+                                        <div class="container-comentario">
+                                            <div class="container-nick">
+                                                <img class="logo-comentario" src="img/foto-users/dragonSoul.jpg" alt="">
+                                                <h4>DragonSoul</h4>
+                                            </div>
+                                            <p>Increíble juego muy divertido.</p>
+                                        </div>
+                                        <div class="container-comentario">
+                                            <div class="container-nick">
+                                                <img class="logo-comentario" src="img/foto-users/mortalKombat.jpg" alt="">
+                                                <h4>MysticFury</h4>
+                                            </div>
+                                            <p>No es lo que esperaba..</p>
+                                        </div>
+                                        <div class="container-comentario">
+                                            <div class="container-nick">
+                                                <img class="logo-comentario" src="img/foto-users/csGO.jpg" alt="">
+                                                <h4>NinjaGamerX</h4>
+                                            </div>
+                                            <p>Buenisimo juego, me encanto</p>
+                                        </div>
+                                        <div id="last-comentario" class="container-comentario">
+                                            <div class="container-nick">
+                                                <img class="logo-comentario" src="img/foto-users/thanos.webp" alt="">
+                                                <h4>Thanos23</h4>
+                                            </div>
+                                            <p>Gran juego!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carrusel-vertical">
+                        <div class="carrusel">
+                            <div id="first-box" class="box-carrusel">
+                                <img src="img/juegos/jump-up.avif" alt="">
+                            </div>
+                            <div class="box-carrusel"><img src="img/juegos/gridpunk.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/four-colors.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/badd-egg.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/evowars.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/skillfite.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/bad-dolls.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/gateway.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/mine-clone.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/pacman.webp" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/ram-cars.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/basketball-skills.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/mini-golf.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/merge-same.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/tap-tap.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/cosmic-miners.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/war-brokers.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/onet-connect.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/shellshockers.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/smash carts.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/bloxd.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/raft.jpg" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/sky-riders.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/crazyroll.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/chess-online-multiplayer.avif" alt=""></div>
+                            <div class="box-carrusel"><img src="img/juegos/fuego-agua.avif" alt=""></div>
+                            <div class="box-carrusel"><img id="last-box" src="img/juegos/trivia-crack-.avif" alt=""></div>
+                            
+                        </div>
+                    </div>
+                    
+            </section>  
+
+           <footer class="footer">   
+                <div class="container-acerca">
+                    <h2>Acerca de Good game</h2>
+                    <p>
+                        ¡Olvídate del aburrimiento con Good Game! La mayor selección de juegos está aquí, para que lleves la diversión al siguiente nivel. Juega online y sin preocupaciones: puedes jugar a todos nuestros juegos sin descargar. ¡Pero cuidado! Nuestros juegos de acción solo son aptos para los más atrevidos; competirás con grandes pilotos en nuestros juegos de carreras; podrás poner a prueba al estratega que llevas dentro en todos nuestros juegos de estrategia; y sólo los auténticos exploradores llegarán a su meta en los juegos de aventura. Y para los clásicos, las versiones clásicas y no tan clásicas de los clásicos juegos de mesa. ¡Todos los juegos y sin descargar, excepto todos aquellos que no sean 4 en línea!
+                    </p>
+                </div>
+                <div class="container-line-footer">
+                    <div class="line-footer"></div>
+                    <div>
+                        <a href="index.html"><div class="container-red-social">
+                            <img class="logo-footer" id="logo-footer-fb" src="img/facebook.svg" alt="">
+                            <h3>Facebook</h3>
+                        </div></a>
+                        <a href="index.html"><div class="container-red-social">
+                            <img class="logo-footer" id="logo-footer-tw" src="img/twitter.svg" alt="">
+                            <h3>Twitter</h3>
+                        </div></a>
+                        <a href="index.html"><div class="container-red-social">
+                            <img class="logo-footer" id="logo-footer-ig" src="img/instagram.svg" alt="">
+                            <h3>instagram</h3>
+                        </div></a>
+                    </div>
+                </div>
+                <div class="container-line-footer">
+                    <div class="line-footer">
+                    </div>
+                    <div>
+                        <h3>Desarrolladores</h3>
+                        <h3>Terminos y condiciones</h3>
+                        <h3>Privacidad</h3>
+                        <h3>Cookies</h3>
+                        <h3>Ayuda</h3>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <dialog id="popUpLoading">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </dialog>
+
+    <script type="text/javascript" src="js/game/main.js"></script>
+</body>
+</html>
