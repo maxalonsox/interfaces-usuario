@@ -1,95 +1,140 @@
-'use strict';
+const canvas = document.getElementById("myCanvas");
+/** @type {CanvasRenderingContext2D} */
+let ctx = canvas.getContext("2d");
+
+const canvasH = 520;
+const canvasW = 900;
 
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-    if (!e.target.matches('.dropbtn')) {
-    var myDropdown = document.getElementById("myDropdown");
-      if (myDropdown.classList.contains('show')) {
-        myDropdown.classList.remove('show');
-      }
-    }
-  }
-  
-  const dropdown = document.querySelector('.dropdown');
-  const overlay = document.getElementById('overlay');
-  
-  const toggleDropdown = () => {
-      const dropdownContent = dropdown.querySelector('.dropdown-content');
-      if (dropdownContent.style.display === 'block') {
-          dropdownContent.style.display = 'none';
-          overlay.style.display = 'none'; // Oculta el overlay al cerrar el dropdown
-      } else {
-          dropdownContent.style.display = 'block';
-          overlay.style.display = 'block'; // Muestra el overlay al abrir el dropdown
-      }
-  };
-  
+const modoDeJuego = 4;
+const cantFichasTotal = (modoDeJuego+3)*(modoDeJuego+2);
 
-//POPUP REDES
-let popUpRedes = document.querySelector("#popUpRedes");
+const boardW = (modoDeJuego+3)*50;
+const boardH = (modoDeJuego+2)*50;
 
-document.querySelector("#btn-compartir").addEventListener("click", ()=>{
-    popUpRedes.showModal();
-});
+let boardx0 = canvasW/2 - boardW/2;
+let boardy0 = canvasH/2 - boardH/2;
 
-document.querySelector("#cerrar-popUpRedes").addEventListener("click", ()=>{
-    popUpRedes.close();
-});
+if (modoDeJuego == 7) {
+    boardy0 = boardy0 + 20;
+}
 
-//POPUP LOADING
+//seteo variables
+const filas = modoDeJuego+2;
+const columnas = modoDeJuego+3;
 
-
-document.querySelector("#logo-header").addEventListener("click", PopUpLoading);
-document.querySelector("#home-nav").addEventListener("click", PopUpLoading);
-document.querySelector('.container-btn-misJuegos').addEventListener('click', PopUpLoading);
-document.querySelector('#inicio-breadcrumb').addEventListener('click', PopUpLoading);
-
-function PopUpLoading(){
-    let popUpLoading = document.querySelector("#popUpLoading");
-    popUpLoading.showModal();
-    setTimeout(a, 5000);
-    function a(){
-        NavigateTo('./home.html');
+//declaro matriz
+const tablero = [];
+const slots = [];
+for (let i = 0; i < columnas-1; i++) {
+    tablero[i] = new Array(filas);
+}
+//inicializo matriz en 0
+for (let i = 0; i < filas; i++) {
+    for (let j = 0; j < columnas; j++) {
+        tablero[i][j] = "";
     }
 }
 
-function NavigateTo(url){
-    location.href = url;
+const board = new Board(tablero, boardx0,boardy0,boardW,boardH,"blue",ctx, modoDeJuego);
+
+
+const fichas = [];
+
+function getMousePos(event){
+    return {
+        x: Math.round(event.clientX - canvas.offsetLeft),
+        y: Math.round(event.clientY - canvas.offsetTop)
+    }
 }
 
+function inicializeGame() {
+    board.draw();
 
-const grande    = document.querySelector('.grande')
-const punto     = document.querySelectorAll('.punto')
+    //pinta fichas rojas
 
-// Recorrer TODOS los punto
-punto.forEach( ( cadaPunto , i )=> {
-    // Asignamos un CLICK a cadaPunto
-    punto[i].addEventListener('click',()=>{
+    let fichaPosY = 505;
+    for (let i = 0; i < cantFichasTotal/2; i++) {
+        let fichaPosX = 30;
+        fichaPosY = fichaPosY - 10;
+        const ficha = new Ficha(fichaPosX, fichaPosY, 20, "red", ctx, 1);
+        fichas.push(ficha);
+        ficha.draw();
+    }
+    
+    //pinta fichas amarillas
 
-        // Guardar la posición de ese PUNTO
-        let posicion  = i
-        // Calculando el espacio que debe DESPLAZARSE el GRANDE
-        let operacion = posicion * -33.3
+    fichaPosY = 505;
+    for (let i = 0; i < cantFichasTotal/2; i++) {
+        let fichaPosX = canvasW - 30;
+        fichaPosY = fichaPosY - 10;
+        const ficha = new Ficha(fichaPosX, fichaPosY, 20, "yellow", ctx, 2);
+        fichas.push(ficha);
+        ficha.draw();
+    }
+}
 
-        // MOVEMOS el grand
-        grande.style.transform = `translateX(${operacion}%)`
+inicializeGame();
 
-        // Recorremos TODOS los punto
-        punto.forEach( ( cadaPunto , i )=>{
-            // Quitamos la clase ACTIVO a TODOS los punto
-            punto[i].classList.remove('activo')
-        })
-        // Añadir la clase activo en el punto que hemos hecho CLICK
-        punto[i].classList.add('activo')
+function repaint() {
+    ctx.clearRect(0,0,canvasW,canvasH);
+    board.draw();
+    for(let i = 0; i < fichas.length; i++) {
+        if (fichas[i].getPlayer() == 1) fichas[i].setFill("red");
+        else fichas[i].setFill("yellow");
+        fichas[i].draw();
+    }
+    fichaClicked = null;
+}
 
-    })
-})
+canvas.addEventListener("mousedown", clickEnFicha);
+canvas.addEventListener("mouseup", ponerFicha);
 
+let fichasPuestas = [];
+let ultimaFichaClicked ;
+let fichaClicked;
 
+function clickEnFicha(e) {
+    let m = getMousePos(e);
+    for (let i = 0; i < fichas.length; i++) {
+        if (fichas[i].contienePunto(m.x ,m.y)) {
+            fichaClicked = fichas[i];
+        }
+    }
+}
+
+function ponerFicha(e) { 
+    let m = getMousePos(e);
+    if (fichaClicked != null) {
+        for (let i = 0; i < posicionPonerFichas.length; i++) {
+            if (((m.x >= posicionPonerFichas[i].getPosX()) && (m.x < (posicionPonerFichas[i].getPosX() + posicionPonerFichas[i].getWidth()))) && (m.y >= posicionPonerFichas[i].getPosY()) && (m.y < (posicionPonerFichas[i].getPosY() + posicionPonerFichas[i].getHeight()))) {
+                if(ultimaFichaClicked == null || (fichaClicked.getPlayer() != ultimaFichaClicked.getPlayer())){
+                    let columna = i;
+                    board.agregarFicha(columna, fichaClicked.getPlayer());
+                    fichasPuestas.push(fichaClicked);
+                    ultimaFichaClicked = fichasPuestas[fichasPuestas.length-1]; 
+                    fichaClicked = null;
+                }
+                
+            }
+        }
+    }
+}
+
+//ARREGLO PARA PONER FICHAS
+
+const posicionPonerFichas = [];
+
+for (let i = 0; i < modoDeJuego+3; i++) {
+    const slot = new Slot(boardx0 + 50*i, boardy0 - 60, 60, 60, "grey", ctx);
+    posicionPonerFichas.push(slot);
+    slot.draw();
+}
+
+console.log(tablero);
+
+// LOGICA PARA VERIFICAR GANADOR
+
+// verificarGanador(){
+    
+// }
