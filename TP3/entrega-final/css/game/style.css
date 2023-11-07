@@ -63,7 +63,7 @@ nav{
 
 .container-juego{
     display: flex;
-    background-color: #ddd;
+    background-color: rgb(155, 90, 157);
     width: 900px;
     height: 520px;
     align-items: center;
@@ -73,12 +73,29 @@ nav{
     display: flex;
     width: 900px;
     justify-content: center;
-    margin: 30px;
-}    
+    margin: 30px 0;
+}
 
 #container-titulo h1{
     font-size: 40px;
-    
+}
+
+#container-jugadores {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.equipo {
+    text-align: center;
+}
+
+.time-travellers h2, .invaders h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.personajes {
+    display: flex;
 }
 
 .jugadores{
@@ -91,8 +108,11 @@ nav{
 }
 
 .jugadores:hover{
-    transform: rotateY(180deg);
-    transition-duration: 2s;
+    border: 2px solid black;
+}
+
+.jugadores.selected, .formato-juego.selected, .jugadores.selected:hover, .formato-juego.selected:hover {
+    border: 3px solid white;
 }
 
 .formato-juego{
@@ -100,17 +120,17 @@ nav{
     cursor: pointer;
 }
 
-.formato-juego h2{
+#container-formato-juego div h2{
     text-align: center;
     margin-bottom: 5px;
 }
-.formato-juego img{
+.formato-juego {
     height: 135px;
     width: 185px;
     border-radius: 15px;
 }
-.formato-juego img:hover, .clicked{
-    border: solid black 2px;
+.formato-juego:hover {
+    border: 2px solid black;
     
 }
 

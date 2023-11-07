@@ -2,42 +2,108 @@ const canvas = document.getElementById("myCanvas");
 /** @type {CanvasRenderingContext2D} */
 let ctx = canvas.getContext("2d");
 
+//SELECCION DE PERSONAJES
+let travellers = document.querySelectorAll(".travellers");
+let invaders = document.querySelectorAll(".invaders");
+let jugadores = document.querySelectorAll(".jugadores");
+
+for(let jugador of jugadores) {
+    jugador.addEventListener("click", () => {
+        if (jugador.classList.contains("travellers")) {
+            for(let traveller of travellers) {
+                traveller.classList.remove("selected");
+            }
+            jugador.classList.add("selected");
+        }
+        if (jugador.classList.contains("invaders")) {
+            for(let invader of invaders) {
+                invader.classList.remove("selected");
+            }
+            jugador.classList.add("selected");
+        }
+    })
+}
+
+//SELECCION DE MODO DE JUEGO
+let formatos = document.querySelectorAll(".formato-juego");
+var modoDeJuego;
+
+for(let formato of formatos) {
+    formato.addEventListener("click", () => {
+        for(let formato of formatos) {
+            formato.classList.remove("selected");
+        }
+        formato.classList.add("selected");
+        modoDeJuego = Number(formato.id);
+    })
+}
+
+// CAMBIO DE DIV A CANVAS
+
+let primerPantalla = document.querySelector("#primer-pantalla");
+let containerJuego = document.querySelector("#container-juego");
+
+document.getElementById("btn-jugar").addEventListener("click", ()=>{
+    setTimeout(a, 1000);
+    function a(){
+        canvas.classList.remove("esconder");
+        containerJuego.classList.add('esconder');
+        containerJuego.classList.remove("container-juego")
+        primerPantalla.classList.add('esconder');
+        inicializeGame();
+    }
+})
+
+//INICIALIZO VARIABLES
+
 const canvasH = 520;
 const canvasW = 900;
 
+var cantFichasTotal;
 
-const modoDeJuego = 4;
-const cantFichasTotal = (modoDeJuego+3)*(modoDeJuego+2);
+var boardW;
+var boardH;
 
-const boardW = (modoDeJuego+3)*50;
-const boardH = (modoDeJuego+2)*50;
+var boardx0;
+var boardy0;
 
-let boardx0 = canvasW/2 - boardW/2;
-let boardy0 = canvasH/2 - boardH/2 + 25;
+var filas;
+var columnas;
 
-//seteo variables
-const filas = modoDeJuego+2;
-const columnas = modoDeJuego+3;
-
-//declaro matriz
 const tablero = [];
 const slots = [];
-for (let i = 0; i < columnas-1; i++) {
-    tablero[i] = new Array(filas);
-}
-//inicializo matriz en 0
-for (let i = 0; i < filas; i++) {
-    for (let j = 0; j < columnas; j++) {
-        tablero[i][j] = "";
-    }
-}
 
-const board = new Board(tablero, boardx0,boardy0,boardW,boardH,"blue",ctx, modoDeJuego);
 const fichas = [];
 const posicionPonerFichas = [];
 
+var board = null;
+
 function inicializeGame() {
-    
+    //SETEO VARIABLES
+    cantFichasTotal = (modoDeJuego+3)*(modoDeJuego+2);
+
+    boardW = (modoDeJuego+3)*50;
+    boardH = (modoDeJuego+2)*50;
+
+    boardx0 = canvasW/2 - boardW/2;
+    boardy0 = canvasH/2 - boardH/2 + 25;
+
+    filas = modoDeJuego+2;
+    columnas = modoDeJuego+3;
+
+    //declaro matriz
+    for (let i = 0; i < columnas-1; i++) {
+        tablero[i] = new Array(filas);
+    }
+    //inicializo matriz en 0
+    for (let i = 0; i < filas; i++) {
+        for (let j = 0; j < columnas; j++) {
+            tablero[i][j] = "";
+        }
+    }
+
+    board = new Board(tablero, boardx0,boardy0,boardW,boardH,"blue",ctx, modoDeJuego);
+
     pintarFondo();
     
     board.draw();
@@ -47,21 +113,17 @@ function inicializeGame() {
     
     //pinta fichas rojas
 
-
     let fichaPosY = 505;
     for (let i = 0; i < cantFichasTotal/2; i++) {
         let fichaPosX = 30;
         fichaPosY = fichaPosY - 10;
         const ficha = new Ficha(fichaPosX, fichaPosY, 20, "red", ctx, 1);
         fichas.push(ficha);
-        
-        
-        
         ficha.draw();
     }
     
     //pinta fichas amarillas
-    
+
     fichaPosY = 505;
     for (let i = 0; i < cantFichasTotal/2; i++) {
         let fichaPosX = canvasW - 30;
@@ -71,6 +133,10 @@ function inicializeGame() {
         ficha.draw();
     }
 }
+
+canvas.addEventListener("mousedown", clickEnFicha);
+canvas.addEventListener("mouseup", ponerFicha);
+canvas.addEventListener("mousemove", moverFicha);
 
 function pintarFondo(){
     let img = document.querySelector("#fondo-canvas")
@@ -88,12 +154,9 @@ function pintarEndijas(){
     }
 }
 
-inicializeGame();
-
-
 function repaint() {
     ctx.clearRect(0,0,canvasW,canvasH);
-        pintarFondo();
+    pintarFondo();
     board.redraw();
     pintarEndijas();
     for(let i = 0; i < fichas.length; i++) {
@@ -103,10 +166,6 @@ function repaint() {
     }
     
 }
-
-canvas.addEventListener("mousedown", clickEnFicha);
-canvas.addEventListener("mouseup", ponerFicha);
-canvas.addEventListener("mousemove", moverFicha);
 
 function getMousePos(event){
     return {
@@ -129,7 +188,7 @@ function clickEnFicha(e) {
             if(ultimaFichaPuesta == null || (fichas[i].getPlayer() != ultimaFichaPuesta)){
                 fichaClicked = fichas[i];
                 inicioY = m.y - fichaClicked.y;
-                inicioX = m.x - fichaClicked.x;             
+                inicioX = m.x - fichaClicked.x;
             }
         }
     }
@@ -165,7 +224,7 @@ function ponerFicha(e) {
                     
                     //setea en null y queda lista para ser clickeada la proxima ficha
 
-                    repaint();
+                    repaint(boardx0, boardy0, posicionPonerFichas, fichas);
                     fichaClicked = null;
                     encontro = true;
                     break;
@@ -192,18 +251,3 @@ function actualizar() {
         repaint();
     }
 }
-
-// CAMBIO DE DIV A CANVAS
-
-let primerPantalla = document.querySelector("#primer-pantalla");
-let containerJuego = document.querySelector("#container-juego")
-
-document.getElementById("btn-jugar").addEventListener("click", ()=>{
-    setTimeout(a, 1000);
-    function a(){
-        canvas.classList.remove("esconder");
-        containerJuego.classList.add('esconder');
-        containerJuego.classList.remove("container-juego")
-        primerPantalla.classList.add('esconder');
-    }
-})

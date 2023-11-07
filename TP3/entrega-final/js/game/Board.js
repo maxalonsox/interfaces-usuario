@@ -34,15 +34,7 @@ class Board {
             for (let j = 0; j < this.matriz[i].length; j++) {
                 this.matriz[i][j].draw();
             }
-          }
-    }
-
-    redraw(){
-        for (let i = 0; i < this.matriz.length; i++) {
-            for (let j = 0; j < this.matriz[i].length; j++) {
-                this.matriz[i][j].draw();
-            }
-          }
+        }
     }
 
 
