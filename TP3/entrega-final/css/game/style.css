@@ -73,12 +73,16 @@ nav{
     display: flex;
     width: 900px;
     justify-content: center;
-    margin: 30px;
+    margin: 30px 0px ;
 }    
 
 #container-titulo h1{
     font-size: 40px;
     
+}
+
+#container-j1, #container-j2{
+    display: flex;
 }
 
 .jugadores{
@@ -94,6 +98,7 @@ nav{
     transform: rotateY(180deg);
     transition-duration: 2s;
 }
+
 
 .formato-juego{
     margin: 0px 10px;
