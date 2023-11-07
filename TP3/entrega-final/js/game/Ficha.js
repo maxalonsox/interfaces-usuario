@@ -6,6 +6,7 @@ class Ficha extends Circle {
 
     draw() {
         super.draw();
+        
     }
 
     getPlayer() {
@@ -23,6 +24,6 @@ class Ficha extends Circle {
 
     delete() {
         this.posX = -100;
-        this.poxY = -100;
+        this.posY = -100;
     }
 }

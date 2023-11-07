@@ -3,7 +3,7 @@ class Slot extends Figure {
         super(posX, posY, fill, context);
         this.width = width;
         this.height = height;
-        this.ficha = new Ficha(this.posX + 30, this.posY + 30, 20, "white", this.context, 0);
+        this.ficha = new Ficha(this.posX + 25, this.posY + 25, 20, "white", this.context, 0);
     }
 
     setFicha(ficha) {
@@ -44,8 +44,7 @@ class Slot extends Figure {
             if (this.ficha.getPlayer() == 1) color = "red";
             else color = "yellow";
         }
-
-        const circulo = new Circle(this.posX + 30, this.posY + 30, 20, color, this.context);
+        const circulo = new Circle(this.posX + 25, this.posY + 25, 20, color, this.context);
         circulo.draw();
     }
 }

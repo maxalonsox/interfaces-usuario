@@ -4,6 +4,8 @@ class Figure {
         this.posY = posY;
         this.fill = fill;
         this.context = context;
+        this.posXInicial = posX;
+        this.posYInicial = posY;
     }
 
     setFill(fill) {
@@ -16,6 +18,16 @@ class Figure {
 
     getPosY() {
         return this.posY;
+    }
+
+    setPosY(posY){
+        this.posY = posY;
+
+    }
+
+    setPosX(posX){
+        this.posX = posX;
+
     }
 
     getPosition() {
@@ -33,6 +45,15 @@ class Figure {
     getFill() {
         return this.fill;
     }
+    
+    getPosXInicial(){
+        return this.posXInicial;
+    }
+
+    getPosYInicial(){
+        return this.posYInicial;
+    }
+
 
     draw() {
         this.context.fillStyle = this.fill;

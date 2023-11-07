@@ -150,14 +150,38 @@
         <div class="container-derecha">
             <section>
                     <div class="container-info-juego">
-                        <div style="display: flex;">
-                            <canvas id="myCanvas" width="900" height="520" style="border: 1px solid grey;"></canvas>
-                        </div>
+                        <div id="container-juego" class="container-juego">
+                            <div id="primer-pantalla">
+                                <div id="container-titulo">
+                                    <h1>CHRONO VS INVADERS</h1>
+                                </div>
+                                <div id="container-jugadores">
+                                    <div class="jugadores"><img src="img/" alt=""></div>
+                                    <div class="jugadores"><img src="img/" alt=""></div>
+                                    <div class="jugadores"><img src="img/" alt=""></div>
+                                    <div class="jugadores"><img src="img/" alt=""></div>
+                                </div>
+                                <div id="container-formato-juego">
 
-                        <!--
-                        <div class="jugar-jasduego">
-                            <img src="img/juego.png" alt="">
-                        </div>-->
+                                    
+                                    
+                                    <!--<div class="formato-juego"><h2>4 EN LINEA</h2><img src="img/4-en-linea.png" alt=""></div>
+                                    <div class="formato-juego"><h2>5 EN LINEA</h2><img src="img/5-en-linea.png" alt=""></div>
+                                    <div class="formato-juego"><h2>6 EN LINEA</h2><img src="img/6-en-linea.png" alt=""></div>
+                                    <div class="formato-juego"><h2>7 EN LINEA</h2><img src="img/7-en-linea.png" alt=""></div>
+                                    -->
+
+                                </div>
+                                <div id="container-btn-jugar">
+                                    <div id="btn-jugar">
+                                        <img src="img/play.svg" alt="">
+                                        <h1>JUGAR</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <canvas id="myCanvas" width="900" height="520" style="border: 1px solid grey;" class="esconder"></canvas>
+                        <img id="fondo-canvas" style="height: 600px; width: 900px; display: none;" src="img/fondo.png"alt="">
 
                         <div class="info-juego">
                             <div class="container-info" id="first-container">
@@ -229,6 +253,7 @@
                             <div class="container-info" id="container-controles">
                                 <h2>Controles</h2>
                                 <div class="controles">
+                                    <!--
                                     <div id="teclado">
                                         <h3>Teclado</h3>
                                             <div class="container-teclas">
@@ -253,10 +278,16 @@
                                                 </div>
                                             </div>
                                         
+                                        </div>
+                                    <div class="line-controles"></div>-->
+                                    <div id="como-se-juega">
+                                        <p>
+                                            Para comenzar a jugar debes seleccionar la ficha que va a tener cada jugador y el modo de juego que mas te guste!
+                                            Una vez iniciado el juego uno de los jugadores debera empezar arrastrando su ficha
+                                            por la parte superior del tablero para posicionar en la columna que desea lanzarla y la ficha caerá. No olvides  
+                                            que solo puedes mover tus fichas cuando sea tu turno! Apurate que el tiempo se termina!</p>
                                     </div>
-                                    <div class="line-controles"></div>
                                     <div id="mouse">
-                                        <h3>Mouse</h3>
                                         <div class="container-img">
                                             <img id="gif" src="img/gif-4enLinea.gif" alt="">
                                             <div>

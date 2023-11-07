@@ -1,27 +1,21 @@
 'use strict';
 
 let btnRegistrar = document.querySelector("#btn-registrar");
-btnRegistrar.addEventListener("click", a);
+btnRegistrar.addEventListener("click", CambiarALoading);
 
-function a(){
-    
-    setTimeout(Cambiar, 2000)
-    
-    function Cambiar(){
-        let tick = document.querySelector("#tick");
-        tick.classList.add("mostar");
-        tick.classList.remove("esconder")
-    }
-    
-    btnRegistrar.classList.add("animacion-register")
-    
-    setTimeout(a, 2500)
-    function a(){
-        NavigatotTo('./index.html');
-    }
-    
-}
+function CambiarALoading(){
 
-function NavigatotTo(url){
-    location.href = url;
+    let container = document.querySelector("#container-register");
+    container.classList.remove('container-login');
+    container.classList.add('esconder');
+    
+    let containerLoading = document.querySelector("#a");
+    containerLoading.classList.remove('esconder');
+    containerLoading.classList.add('container-loading');
+    
+    setTimeout(NavigateTo, 5000);
+}   
+
+function NavigateTo(url){
+    location.href = './home.html';
 }

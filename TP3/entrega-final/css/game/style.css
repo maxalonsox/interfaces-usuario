@@ -3,6 +3,10 @@ a{
     text-decoration: none;
 }
 
+.esconder{
+    display: none;
+}
+
 /* CONTENEDORES */
 
 .container-pantalla{
@@ -55,6 +59,90 @@ nav{
     display: none;
 }
 
+/* JUEGO */
+
+.container-juego{
+    display: flex;
+    background-color: #ddd;
+    width: 900px;
+    height: 520px;
+    align-items: center;
+}
+
+#container-formato-juego, #container-jugadores, #container-titulo, #container-btn-jugar{
+    display: flex;
+    width: 900px;
+    justify-content: center;
+    margin: 30px;
+}    
+
+#container-titulo h1{
+    font-size: 40px;
+    
+}
+
+.jugadores{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #8600B5;
+    margin: 0px 20px;
+    
+}
+
+.jugadores:hover{
+    transform: rotateY(180deg);
+    transition-duration: 2s;
+}
+
+.formato-juego{
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.formato-juego h2{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.formato-juego img{
+    height: 135px;
+    width: 185px;
+    border-radius: 15px;
+}
+.formato-juego img:hover, .clicked{
+    border: solid black 2px;
+    
+}
+
+#btn-jugar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 300px;
+    background-color: #1B1B1B;
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+
+#btn-jugar:hover{
+    scale: 0.98;
+    background-color: #CB8AD5;
+    transition-duration: 0.5s;
+}
+
+#btn-jugar img{
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+}
+
+#btn-jugar h1{
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
 
 /* INFO JUEGO */
 
@@ -243,7 +331,7 @@ nav{
 
 /* QUE ES? */
 
-#container-queEs p{
+#container-queEs p, .controles p{
     color: #E2BFE8;
     font-size: 12px;
     line-height: 16px;
@@ -256,6 +344,10 @@ nav{
     border-left: 2px solid #CB8AD5;
     border-radius: 5px;
     height: 210px;
+}
+
+#como-se-juega{
+    width: 400px;
 }
 
 .controles{
@@ -308,7 +400,7 @@ nav{
 }
 
 #gif{
-    height: 140px;
+    height: 160px;
     width: 230px;
 }
 
