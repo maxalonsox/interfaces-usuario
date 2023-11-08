@@ -7,6 +7,9 @@ let travellers = document.querySelectorAll(".travellers");
 let invaders = document.querySelectorAll(".invaders");
 let jugadores = document.querySelectorAll(".jugadores");
 
+var imagenJugador1 = document.getElementById("travellers-1");
+var imagenJugador2 = document.getElementById("invaders-1");
+
 for(let jugador of jugadores) {
     jugador.addEventListener("click", () => {
         if (jugador.classList.contains("travellers")) {
@@ -14,19 +17,21 @@ for(let jugador of jugadores) {
                 traveller.classList.remove("selected");
             }
             jugador.classList.add("selected");
+            imagenJugador1 = document.getElementById(jugador.id);
         }
         if (jugador.classList.contains("invaders")) {
             for(let invader of invaders) {
                 invader.classList.remove("selected");
             }
             jugador.classList.add("selected");
+            imagenJugador2 = document.getElementById(jugador.id);
         }
     })
 }
 
 //SELECCION DE MODO DE JUEGO
 let formatos = document.querySelectorAll(".formato-juego");
-var modoDeJuego;
+var modoDeJuego = 4;
 
 for(let formato of formatos) {
     formato.addEventListener("click", () => {
@@ -102,7 +107,9 @@ function inicializeGame() {
         }
     }
 
-    board = new Board(tablero, boardx0,boardy0,boardW,boardH,"blue",ctx, modoDeJuego);
+    var image = document.getElementById("travellers-1");
+
+    board = new Board(tablero, boardx0,boardy0,boardW,boardH,"blue",ctx, modoDeJuego, image);
 
     pintarFondo();
     
@@ -111,24 +118,24 @@ function inicializeGame() {
     //pintar cacilleros del board
     pintarEndijas();
     
-    //pinta fichas rojas
+    //pinta fichas jugador 1
 
     let fichaPosY = 505;
     for (let i = 0; i < cantFichasTotal/2; i++) {
         let fichaPosX = 30;
         fichaPosY = fichaPosY - 10;
-        const ficha = new Ficha(fichaPosX, fichaPosY, 20, "red", ctx, 1);
+        const ficha = new Ficha(fichaPosX, fichaPosY, 20, "red", ctx, 1, imagenJugador1);
         fichas.push(ficha);
         ficha.draw();
     }
     
-    //pinta fichas amarillas
+    //pinta fichas jugador 2
 
     fichaPosY = 505;
     for (let i = 0; i < cantFichasTotal/2; i++) {
         let fichaPosX = canvasW - 30;
         fichaPosY = fichaPosY - 10;
-        const ficha = new Ficha(fichaPosX, fichaPosY, 20, "yellow", ctx, 2);
+        const ficha = new Ficha(fichaPosX, fichaPosY, 20, "yellow", ctx, 2, imagenJugador2);
         fichas.push(ficha);
         ficha.draw();
     }
@@ -218,7 +225,13 @@ function ponerFicha(e) {
                     if (fichaAgregada.insertada) {
 
                         //checkea si hay ganador
-                        if (board.hayGanador(fichaClicked, fichaAgregada.fila, columna)){ alert("GANADOR: Jugador " + fichaClicked.getPlayer());}
+                        if (board.hayGanador(fichaClicked, fichaAgregada.fila, columna)){ 
+                            if (fichaClicked.getPlayer() == 1) {
+                                alert ("¡Han ganado los Viajeros!");
+                            } else {
+                                alert("¡Han ganado los Invasores!");
+                            }
+                        }
                     }
                     
                     //toma la posicion la ficha en el arreglo de fichas generales

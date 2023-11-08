@@ -1,6 +1,6 @@
 
 class Board {
-    constructor(matriz, posX, posY, width, height, fill, context, modoDeJuego) {
+    constructor(matriz, posX, posY, width, height, fill, context, modoDeJuego, image) {
         this.posX = posX;
         this.posY = posY;
         this.fill = fill;
@@ -9,6 +9,7 @@ class Board {
         this.height = height;
         this.matriz = matriz;
         this.modoDeJuego = modoDeJuego;
+        this.image = image;
     }
 
     getWidth() {
@@ -22,7 +23,7 @@ class Board {
     draw() {
        for (let i = 0; i < this.matriz.length; i++) {
          for (let j = 0; j < this.matriz[i].length; j++) {
-            this.matriz[i][j] = new Slot(boardx0 + 50*j, boardy0 + 50*i, 50, 50, "blue", ctx);
+            this.matriz[i][j] = new Slot(boardx0 + 50*j, boardy0 + 50*i, 50, 50, "blue", ctx, this.image);
             slots.push(this.matriz[i][j]);
             this.matriz[i][j].draw();
          }
@@ -40,10 +41,7 @@ class Board {
 
     agregarFicha(columna, player) {
         if ((columna < this.modoDeJuego+3) && (player == 1 || player == 2)) {
-            let color = "";
-            if (player == 1) color = "red";
-            else color = "yellow";
-            const ficha = new Ficha(this.posX+30+60*columna,this.posY+30+60*5,20,color,this.context, player);
+            const ficha = new Ficha(this.posX+30+60*columna,this.posY+30+60*5,20,"",this.context, player, this.image);
             if (this.matriz[0][columna].getFicha().getPlayer() == 0) {
                 let fila = this.buscarFilaLibre(columna);
                 this.matriz[fila][columna].setFicha(ficha);

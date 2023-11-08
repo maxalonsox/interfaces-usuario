@@ -63,7 +63,7 @@ nav{
 
 .container-juego{
     display: flex;
-    background-color: rgb(155, 90, 157);
+    background-color: rgb(165, 165, 165);
     width: 900px;
     height: 520px;
     align-items: center;
