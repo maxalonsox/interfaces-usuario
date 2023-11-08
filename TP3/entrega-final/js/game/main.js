@@ -56,27 +56,27 @@ document.getElementById("btn-jugar").addEventListener("click", ()=>{
         containerJuego.classList.add('esconder');
         containerJuego.classList.remove("container-juego")
         primerPantalla.classList.add('esconder');
-        btnMenu.classList.remove("esconder");
+        //btnMenu.classList.remove("esconder");
         timer.classList.remove('esconder');
-        inicializeGame();
         minutos = 5;
         segundos =0;
         temporizador();
+        inicializeGame();
     }
 })
 
 //CAMBIO DE CANVAS A DIV
-let btnMenu = document.getElementById("btn-menu");
+// let btnMenu = document.getElementById("btn-menu");
 
-btnMenu.addEventListener("click", () => {
-    canvas.classList.add("esconder");
-    containerJuego.classList.remove("esconder");
-    containerJuego.classList.add("container-juego");
-    primerPantalla.classList.remove("esconder");
-    timer.classList.add('esconder');
-    btnMenu.classList.add("esconder");
+// btnMenu.addEventListener("click", () => {
+//     canvas.classList.add("esconder");
+//     containerJuego.classList.remove("esconder");
+//     containerJuego.classList.add("container-juego");
+//     primerPantalla.classList.remove("esconder");
+//     timer.classList.add('esconder');
+//     btnMenu.classList.add("esconder");
     
-})
+// })
 
 //INICIALIZO VARIABLES
 
