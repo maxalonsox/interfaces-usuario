@@ -55,8 +55,20 @@ document.getElementById("btn-jugar").addEventListener("click", ()=>{
         containerJuego.classList.add('esconder');
         containerJuego.classList.remove("container-juego")
         primerPantalla.classList.add('esconder');
+        btnMenu.classList.remove("esconder");
         inicializeGame();
     }
+})
+
+//CAMBIO DE CANVAS A DIV
+let btnMenu = document.getElementById("btn-menu");
+
+btnMenu.addEventListener("click", () => {
+    canvas.classList.add("esconder");
+    containerJuego.classList.remove("esconder");
+    containerJuego.classList.add("container-juego");
+    primerPantalla.classList.remove("esconder");
+    btnMenu.classList.add("esconder");
 })
 
 //INICIALIZO VARIABLES
@@ -105,6 +117,11 @@ function inicializeGame() {
         for (let j = 0; j < columnas; j++) {
             tablero[i][j] = "";
         }
+    }
+
+    //dejo vacío el arreglo de fichas
+    for (let i = 0; i < fichas.length; i++) {
+        fichas.pop();
     }
 
     var image = document.getElementById("travellers-1");
