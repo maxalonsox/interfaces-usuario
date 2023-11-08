@@ -47,7 +47,7 @@ for(let formato of formatos) {
 
 let primerPantalla = document.querySelector("#primer-pantalla");
 let containerJuego = document.querySelector("#container-juego");
-// let timer = document.querySelector("#temporizador");
+let timer = document.querySelector("#temporizador");
 
 document.getElementById("btn-jugar").addEventListener("click", ()=>{
     setTimeout(a, 1000);
@@ -56,23 +56,23 @@ document.getElementById("btn-jugar").addEventListener("click", ()=>{
         containerJuego.classList.add('esconder');
         containerJuego.classList.remove("container-juego")
         primerPantalla.classList.add('esconder');
-        // btnMenu.classList.remove("esconder");
-        // timer.classList.remove('esconder');
+        btnMenu.classList.remove("esconder");
+        timer.classList.remove('esconder');
         inicializeGame();
     }
 })
 
 //CAMBIO DE CANVAS A DIV
-// let btnMenu = document.getElementById("btn-menu");
+let btnMenu = document.getElementById("btn-menu");
 
-// btnMenu.addEventListener("click", () => {
-//     canvas.classList.add("esconder");
-//     containerJuego.classList.remove("esconder");
-//     containerJuego.classList.add("container-juego");
-//     primerPantalla.classList.remove("esconder");
-//     timer.classList.add('esconder');
-//     btnMenu.classList.add("esconder");
-// })
+btnMenu.addEventListener("click", () => {
+    canvas.classList.add("esconder");
+    containerJuego.classList.remove("esconder");
+    containerJuego.classList.add("container-juego");
+    primerPantalla.classList.remove("esconder");
+    timer.classList.add('esconder');
+    btnMenu.classList.add("esconder");
+})
 
 //INICIALIZO VARIABLES
 
@@ -159,7 +159,7 @@ function inicializeGame() {
         fichas.push(ficha);
         ficha.draw();
     }
-    //temporizador();
+    temporizador();
 }
 
 canvas.addEventListener("mousedown", clickEnFicha);
@@ -310,21 +310,28 @@ function actualizar() {
     }
 }
 
-// const tiempoRestante = document.getElementById("tiempo-restante");
-// let minutos = 5;
-// let segundos = 59;
-// let temporizadors;
+const tiempoRestante = document.getElementById("tiempo-restante");
+let minutos = 5;
+let segundos = 0;
+let temp;
 
-// function temporizador() {
-//     if (!temporizadors) {
-//         tiempoRestante.textContent = minutos + ":" + segundos ;
-//         temporizador = setInterval(function () {
-//           segundos--;
-//           if (segundos === 60) {
-//             minutos--;
-//             segundos = 0;
-//           }
-//           tiempoRestante.textContent = minutos + ":" + segundos;
-//         }, 1000);
-//       }
-// };
+function temporizador() {
+    if (!temp) {
+        tiempoRestante.textContent = minutos + ":" + (segundos < 10 ? "0" : "") + segundos;
+
+        temporizador = setInterval(function () {
+            if (minutos === 0 && segundos === 0) {
+                clearInterval(temporizador);
+                inicializeGame();
+            } else {
+                if (segundos === 0) {
+                    minutos--;
+                    segundos = 59;
+                } else {
+                    segundos--;
+                }
+                tiempoRestante.textContent = minutos + ":" + (segundos < 10 ? "0" : "") + segundos;
+            }
+        }, 1000);
+    }
+}
