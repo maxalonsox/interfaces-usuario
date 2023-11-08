@@ -104,14 +104,26 @@ nav{
     border-radius: 50%;
     background-color: #8600B5;
     margin: 0px 20px;
-    
+}
+
+.jugadores img {
+    height: 100%;
+    width: 100%;
 }
 
 .jugadores:hover{
-    border: 2px solid black;
+    border: 2px solid white;
 }
 
-.jugadores.selected, .formato-juego.selected, .jugadores.selected:hover, .formato-juego.selected:hover {
+.travellers.selected {
+    border: 3px solid blue;
+}
+
+.invaders.selected {
+    border: 3px solid red;
+}
+
+.formato-juego.selected, .jugadores.selected:hover, .formato-juego.selected:hover {
     border: 3px solid white;
 }
 
