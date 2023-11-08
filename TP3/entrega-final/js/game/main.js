@@ -59,6 +59,8 @@ document.getElementById("btn-jugar").addEventListener("click", ()=>{
         btnMenu.classList.remove("esconder");
         timer.classList.remove('esconder');
         inicializeGame();
+        minutos = 5;
+        segundos =0;
         temporizador();
     }
 })
@@ -313,8 +315,8 @@ function actualizar() {
 }
 
 const tiempoRestante = document.getElementById("tiempo-restante");
-let minutos = 5;
-let segundos = 0;
+let minutos;
+let segundos;
 let temp;
 
 function temporizador() {
