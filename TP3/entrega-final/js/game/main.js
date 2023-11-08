@@ -59,6 +59,7 @@ document.getElementById("btn-jugar").addEventListener("click", ()=>{
         btnMenu.classList.remove("esconder");
         timer.classList.remove('esconder');
         inicializeGame();
+        temporizador();
     }
 })
 
@@ -72,6 +73,7 @@ btnMenu.addEventListener("click", () => {
     primerPantalla.classList.remove("esconder");
     timer.classList.add('esconder');
     btnMenu.classList.add("esconder");
+    
 })
 
 //INICIALIZO VARIABLES
@@ -99,6 +101,7 @@ const posicionPonerFichas = [];
 var board = null;
 
 function inicializeGame() {
+    
     //SETEO VARIABLES
     cantFichasTotal = (modoDeJuego+3)*(modoDeJuego+2);
 
@@ -159,7 +162,6 @@ function inicializeGame() {
         fichas.push(ficha);
         ficha.draw();
     }
-    temporizador();
 }
 
 canvas.addEventListener("mousedown", clickEnFicha);
