@@ -287,10 +287,6 @@ function ponerFicha(e) {
             fichaClicked = null;
         }
     }
-    if(!encontro){
-        fichaClicked.setPosition(fichaPosXInicial, fichaPosYInicial);
-        repaint();
-    }
     click = false;
 }
 
