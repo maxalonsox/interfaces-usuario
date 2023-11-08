@@ -1,12 +1,12 @@
 class Ficha extends Circle {
-    constructor(posX, posY, radius, fill, context, player) {
+    constructor(posX, posY, radius, fill, context, player, image) {
         super(posX, posY, radius, fill, context);
         this.player = player;
+        this.image = image;
     }
 
     draw() {
-        super.draw();
-        
+        this.context.drawImage(this.image, this.posX-20, this.posY-20, 40, 40);
     }
 
     getPlayer() {
