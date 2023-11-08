@@ -205,7 +205,9 @@ let fichaPosXInicial;
 let fichaPosYInicial;
 let click = false;
 var inicioX = 0, inicioY = 0;
-
+var fichax0;
+var fichay0;
+var indiceFichaEnMovimiento;
 
 function clickEnFicha(e) {
     let m = getMousePos(e);
@@ -213,8 +215,9 @@ function clickEnFicha(e) {
         if (fichas[i].contienePunto(m.x ,m.y)) {
             if(ultimaFichaPuesta == null || (fichas[i].getPlayer() != ultimaFichaPuesta)){
                 fichaClicked = fichas[i];
-                fichaPosXInicial = fichas[i].getPosXInicial();
-                fichaPosYInicial = fichas[i].getPosYInicial();
+                fichax0 = fichaClicked.getPosX();
+                fichay0 = fichaClicked.getPosY();
+                indiceFichaEnMovimiento = i;
                 inicioY = m.y - fichaClicked.y;
                 inicioX = m.x - fichaClicked.x;
             }
@@ -277,6 +280,12 @@ function ponerFicha(e) {
                 return;
             }
         }
+        if (fichaClicked != null) {
+            fichas[indiceFichaEnMovimiento].setPosX(fichax0);
+            fichas[indiceFichaEnMovimiento].setPosY(fichay0);
+            repaint();
+            fichaClicked = null;
+        }
     }
     if(!encontro){
         fichaClicked.setPosition(fichaPosXInicial, fichaPosYInicial);
@@ -290,13 +299,13 @@ function moverFicha(e){
     if (click != false && fichaClicked != null) {
         fichaClicked.setPosX(m.x);
         fichaClicked.setPosY(m.y);
-    }   
+    }
     actualizar();
 }
 
 function actualizar() {
     if (click != false && fichaClicked != null) {
-        fichaClicked.draw();    
+        fichaClicked.draw();
         repaint();
     }
 }
