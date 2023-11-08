@@ -98,6 +98,10 @@ nav{
     display: flex;
 }
 
+#container-j1, #container-j2{
+    display: flex;
+}
+
 .jugadores{
     height: 80px;
     width: 80px;
@@ -126,6 +130,7 @@ nav{
 .formato-juego.selected, .jugadores.selected:hover, .formato-juego.selected:hover {
     border: 3px solid white;
 }
+
 
 .formato-juego{
     margin: 0px 10px;

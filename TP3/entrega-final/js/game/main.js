@@ -177,6 +177,8 @@ function getMousePos(event){
 let fichasPuestas = [];
 let ultimaFichaPuesta ;
 let fichaClicked;
+let fichaPosXInicial;
+let fichaPosYInicial;
 let click = false;
 var inicioX = 0, inicioY = 0;
 
@@ -187,6 +189,8 @@ function clickEnFicha(e) {
         if (fichas[i].contienePunto(m.x ,m.y)) {
             if(ultimaFichaPuesta == null || (fichas[i].getPlayer() != ultimaFichaPuesta)){
                 fichaClicked = fichas[i];
+                fichaPosXInicial = fichas[i].getPosXInicial();
+                fichaPosYInicial = fichas[i].getPosYInicial();
                 inicioY = m.y - fichaClicked.y;
                 inicioX = m.x - fichaClicked.x;
             }
@@ -195,7 +199,7 @@ function clickEnFicha(e) {
     click = true; 
 }
 
-function ponerFicha(e) { 
+function ponerFicha(e) {
     let m = getMousePos(e);
     let encontro = false;
     if (fichaClicked != null) {
@@ -229,11 +233,26 @@ function ponerFicha(e) {
                     encontro = true;
                     break;
                 }
+                
+                //toma la posicion la ficha en el arreglo de fichas generales
+                let p = fichas.indexOf(fichaClicked);
+                //borra del arreglo de fichas generales la ficha puesta
+                fichas.splice(p,1);
+                
+                //setea en null y queda lista para ser clickeada la proxima ficha
+
+                repaint();
+                fichaClicked = null;
+                encontro = true;
+                return;
             }
         }
     }
+    if(!encontro){
+        fichaClicked.setPosition(fichaPosXInicial, fichaPosYInicial);
+        repaint();
+    }
     click = false;
-    
 }
 
 function moverFicha(e){
