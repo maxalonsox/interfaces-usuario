@@ -21,13 +21,18 @@ class Board {
     }
 
     draw() {
-       for (let i = 0; i < this.matriz.length; i++) {
-         for (let j = 0; j < this.matriz[i].length; j++) {
-            this.matriz[i][j] = new Slot(boardx0 + 50*j, boardy0 + 50*i, 50, 50, "blue", ctx, this.image);
-            slots.push(this.matriz[i][j]);
-            this.matriz[i][j].draw();
-         }
-       }
+        for (let i = 0; i < this.matriz.length; i++) {
+            for (let j = 0; j < this.matriz[i].length; j++) {
+                this.matriz[i][j] = new Slot(boardx0 + 50*j, boardy0 + 50*i, 50, 50, "blue", ctx, this.image);
+                slots.push(this.matriz[i][j]);
+                this.matriz[i][j].draw();
+            }
+        }
+        for (let i = 0; i < this.modoDeJuego+3; i++) {
+            const slot = new Slot(boardx0 + 50*i, boardy0 - 50, 50, 50, "grey", ctx, this.image);
+            posicionPonerFichas.push(slot);
+            slot.draw();
+        }
     }
 
     redraw(){
@@ -35,6 +40,9 @@ class Board {
             for (let j = 0; j < this.matriz[i].length; j++) {
                 this.matriz[i][j].draw();
             }
+        }
+        for (let i = 0; i < this.modoDeJuego+3; i++) {
+            posicionPonerFichas[i].draw();
         }
     }
 

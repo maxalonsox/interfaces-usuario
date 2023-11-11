@@ -73,7 +73,8 @@ btnMenu.addEventListener("click", () => {
     primerPantalla.classList.remove("esconder");
     timer.classList.add('esconder');
     btnMenu.classList.add("esconder");
-    
+    clearInterval(temp);
+    temp = null;
 })
 
 //INICIALIZO VARIABLES
@@ -92,16 +93,15 @@ var boardy0;
 var filas;
 var columnas;
 
-const tablero = [];
+var tablero = [];
 const slots = [];
-
 const fichas = [];
+const fichasPuestas = [];
 const posicionPonerFichas = [];
 
 var board = null;
 
 function inicializeGame() {
-    
     //SETEO VARIABLES
     cantFichasTotal = (modoDeJuego+3)*(modoDeJuego+2);
 
@@ -114,10 +114,17 @@ function inicializeGame() {
     filas = modoDeJuego+2;
     columnas = modoDeJuego+3;
 
+    ultimaFichaPuesta = null;
+    fichaClicked = null;
+
+    //vacío el arreglo
+    tablero = [];
+
     //declaro matriz
-    for (let i = 0; i < columnas-1; i++) {
+    for (let i = 0; i < filas; i++) {
         tablero[i] = new Array(filas);
     }
+
     //inicializo matriz en 0
     for (let i = 0; i < filas; i++) {
         for (let j = 0; j < columnas; j++) {
@@ -125,9 +132,21 @@ function inicializeGame() {
         }
     }
 
-    //dejo vacío el arreglo de fichas
-    for (let i = 0; i < fichas.length; i++) {
+    //dejo vacío el arreglo de fichas, fichas puestas y slots
+    for (let i = fichas.length; i > 0; i--) {
         fichas.pop();
+    }
+
+    for (let i = fichasPuestas.length; i > 0; i--) {
+        fichasPuestas.pop();
+    }
+
+    for (let i = slots.length; i > 0; i--) {
+        slots.pop();
+    }
+
+    for (let i = posicionPonerFichas.length; i > 0; i--) {
+        posicionPonerFichas.pop();
     }
 
     var image = document.getElementById("travellers-1");
@@ -137,9 +156,6 @@ function inicializeGame() {
     pintarFondo();
     
     board.draw();
-    
-    //pintar cacilleros del board
-    pintarEndijas();
     
     //pinta fichas jugador 1
 
@@ -176,19 +192,10 @@ function pintarFondo(){
     ctx.fill();
 }
 
-function pintarEndijas(){
-    for (let i = 0; i < modoDeJuego+3; i++) {
-        const slot = new Slot(boardx0 + 50*i, boardy0 - 50, 50, 50, "grey", ctx);
-        posicionPonerFichas.push(slot);
-        slot.draw();
-    }
-}
-
 function repaint() {
     ctx.clearRect(0,0,canvasW,canvasH);
     pintarFondo();
     board.redraw();
-    pintarEndijas();
     for(let i = 0; i < fichas.length; i++) {
         if (fichas[i].getPlayer() == 1) fichas[i].setFill("red");
         else fichas[i].setFill("yellow");
@@ -204,8 +211,7 @@ function getMousePos(event){
     }
 }
 
-let fichasPuestas = [];
-let ultimaFichaPuesta ;
+let ultimaFichaPuesta;
 let fichaClicked;
 let fichaPosXInicial;
 let fichaPosYInicial;
@@ -234,22 +240,18 @@ function clickEnFicha(e) {
 
 function ponerFicha(e) {
     let m = getMousePos(e);
-    let encontro = false;
     if (fichaClicked != null) {
-        for (let i = 0; (i < posicionPonerFichas.length) && fichaClicked != null; i++) {
+        for (let i = 0; (i < posicionPonerFichas.length); i++) {
             if (posicionPonerFichas[i].contienePunto(m.x,m.y)) {
                 if(ultimaFichaPuesta == null || (fichaClicked.getPlayer() != ultimaFichaPuesta)){
                     //agrega la ficha al board
                     let columna = i;
                     const fichaAgregada = board.agregarFicha(columna, fichaClicked.getPlayer());
-                    
-                    //agrega las fichas clickeadas al arreglo de fichas ya puestas en el board
-                    fichasPuestas.push(fichaClicked);
-                    //setea la ultimaficha puesta en el board
-                    ultimaFichaPuesta = fichasPuestas[fichasPuestas.length-1].getPlayer(); 
-
                     if (fichaAgregada.insertada) {
-
+                        //agrega las fichas clickeadas al arreglo de fichas ya puestas en el board
+                        fichasPuestas.push(fichaClicked);
+                        //setea la ultimaficha puesta en el board
+                        ultimaFichaPuesta = fichasPuestas[fichasPuestas.length-1].getPlayer(); 
                         //checkea si hay ganador
                         if (board.hayGanador(fichaClicked, fichaAgregada.fila, columna)){ 
                             if (fichaClicked.getPlayer() == 1) {
@@ -258,32 +260,17 @@ function ponerFicha(e) {
                                 alert("¡Han ganado los Invasores!");
                             }
                         }
-                    }
-                    
-                    //toma la posicion la ficha en el arreglo de fichas generales
-                    let p = fichas.indexOf(fichaClicked);
-                    //borra del arreglo de fichas generales la ficha puesta
-                    fichas.splice(p,1);
-                    
-                    //setea en null y queda lista para ser clickeada la proxima ficha
-
-                    repaint(boardx0, boardy0, posicionPonerFichas, fichas);
-                    fichaClicked = null;
-                    encontro = true;
-                    break;
+                        //toma la posicion la ficha en el arreglo de fichas generales
+                        let p = fichas.indexOf(fichaClicked);
+                        //borra del arreglo de fichas generales la ficha puesta
+                        fichas.splice(p,1);
+                    } else break;
                 }
                 
-                //toma la posicion la ficha en el arreglo de fichas generales
-                let p = fichas.indexOf(fichaClicked);
-                //borra del arreglo de fichas generales la ficha puesta
-                fichas.splice(p,1);
-                
                 //setea en null y queda lista para ser clickeada la proxima ficha
-
                 repaint();
                 fichaClicked = null;
-                encontro = true;
-                return;
+                break;
             }
         }
         if (fichaClicked != null) {
@@ -313,17 +300,17 @@ function actualizar() {
 }
 
 const tiempoRestante = document.getElementById("tiempo-restante");
-let minutos = 5;
-let segundos = 0;
 let temp;
 
 function temporizador() {
+    let minutos = 5;
+    let segundos = 0;
     if (!temp) {
         tiempoRestante.textContent = minutos + ":" + (segundos < 10 ? "0" : "") + segundos;
-
-        temporizador = setInterval(function () {
-            if (minutos === 0 && segundos === 0) {
-                clearInterval(temporizador);
+        temp = setInterval(function () {
+            if ((minutos == 0) && (segundos == 0)) {
+                clearInterval(temp);
+                temp = null;
                 inicializeGame();
             } else {
                 if (segundos === 0) {
