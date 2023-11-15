@@ -56,7 +56,7 @@ document.getElementById("btn-jugar").addEventListener("click", ()=>{
         containerJuego.classList.add('esconder');
         containerJuego.classList.remove("container-juego")
         primerPantalla.classList.add('esconder');
-        //btnMenu.classList.remove("esconder");
+        btnMenu.classList.remove("esconder");
         timer.classList.remove('esconder');
         minutos = 5;
         segundos =0;
