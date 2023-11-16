@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+
+/* --------------- SECTION FRIENDS --------------- */
+.section-friends {
+    margin-top: -31px;
+    height: 1085px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* BACKGROUND-VIOLET */
+.bg-violet-friends {
+    position: absolute;
+    top: 754px;
+    height: 636px;
+    border-top: 79px solid transparent;
+    border-right: 100vw solid #8F6AA6;
+    border-bottom: 129.5px solid transparent;
+    z-index: 30;
+}
+
+/* CONTENT */
+.container-info-goblin {
+    display: flex;
+    width: 100%;
+}
+
+.section-friends .content {
+    position: absolute;
+    top: 994px;
+    z-index: 40;
+}
+
+.section-friends .content .title-section-friends, .section-friends .content .description-section-friends {
+    font-family: 'Lato', sans-serif;
+    color: #FFF;
+    margin-left: -5px;
+}
+
+.section-friends .content .title-section-friends {
+    width: 646px;
+    font-size: 60px;
+    font-weight: 600;
+    margin-top: -25px;
+}
+
+.section-friends .content .description-section-friends {
+    width: 586px;
+    font-size: 20px;
+    margin-top: 24px;
+}
+
+.img-videogame {
+    position: absolute;
+    margin-left: -20px;
+}
+
+.green-goblin {
+    height: 921px;
+    margin-top: -87px;
+    margin-left: -29px;
+    z-index: 40;
+}
+
+/* CARDS */
+
+.container-cards-characters {
+    display: flex;
+    gap: 40px;
+}
+
+.container-card {
+    width: 333px;
+}
+
+.card {
+    margin-bottom: 23px;
+}
+
+.description-card {
+    color: #000;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
+
