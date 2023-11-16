@@ -26,13 +26,13 @@
 }
 
 .subscribite .titulo{
-    margin-top: 152px;
+    margin-top: 151px;
     font-size: 60px;
     font-family: "lato";
     font-weight: 600;
     width: 816px;
     text-align: center;
-    line-height: 94,5%;
+    line-height: 94.2%;
 }
 
 .btn-input-footer{
@@ -51,18 +51,18 @@
     border-right: 0px;
     width: 562px;
     height: 80px;
+    padding-left: 43px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-}
-
-.btn-input-footer input::placeholder{
     font-size: 20px;
     font-family: "lato";
     letter-spacing: 11%;
     line-height: 94.5%;
+}
+
+.btn-input-footer input::placeholder{
     color: black;
     opacity: 39%;
-    padding-left: 52px;
 }
 
 .btn-input-footer button{
@@ -73,27 +73,66 @@
     width: 218px;
     height: 100px;
     font-size: 20px;
-    letter-spacing: 11%;
+    letter-spacing: 1px;
     -webkit-text-stroke: 3px #02187E;
     font-family: 'lato';
     color: #02187E;
+    cursor: pointer;
 }
 
 .subscribite p{
+    margin-top: 39px;
     width: 578px;
     height: 95px;
     font-size: 20px;
+    margin-right: 90px;
 }
 
 .subscribite p span{
     text-decoration: underline;
 }
 
+.esrb{
+    width: 231px;
+    height: 145px;
+    margin-top: 30px;
+    margin-right: 436px;
+}
+
+.spidey-negro{
+    position: absolute;
+    margin-top: 1135px;
+    margin-right: 820px;
+    width: 97px;
+    height: 89px;
+    z-index: 1;
+}
+
+.spidey-rojo{
+    position: absolute;
+    margin-top: 965px;
+    margin-left: 745px;
+    width: 94px;
+    height: 88px;
+    z-index: 1;
+}
+
+.spidey-blanco{
+    position: absolute;
+    margin-top: 1071px;
+    margin-right: 230px;
+    width: 58px;
+    height: 64px;
+    z-index: 1;
+}
+
 .layer1-footer{
     background-image: url("../img/footer/layer1-footer.png");
     background-repeat: no-repeat;
+    position: absolute;
     width: 100%;
     height: 720px;
+    margin-top: 576px;
 }
 
 .plataformas{
