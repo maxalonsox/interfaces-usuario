@@ -4,6 +4,10 @@
     font-family: "lato";
 }
 
+.cielo .content, .container-derechos .content{
+    margin: 0px;
+}
+
 .footer{
     width: 100%;
 }
@@ -17,6 +21,7 @@
     background: linear-gradient(#8FBEFC, #F7E3D8)
     
 }
+
 
 .subscribite{
     display: flex;
@@ -169,7 +174,7 @@
     color: #FFFFFF;
     font-weight: none;
     line-height: 94.5%;
-    letter-spacing: 11%;
+    letter-spacing: 1.5px;
 }
 .derechos p span{
     text-decoration: underline;
