@@ -104,7 +104,7 @@
     margin-right: 436px;
 }
 
-.spidey-negro{
+.spidey-negro-footer{
     position: absolute;
     margin-top: 1135px;
     margin-right: 820px;
@@ -113,7 +113,7 @@
     z-index: 1;
 }
 
-.spidey-rojo{
+.spidey-rojo-footer{
     position: absolute;
     margin-top: 965px;
     margin-left: 745px;
@@ -122,7 +122,7 @@
     z-index: 1;
 }
 
-.spidey-blanco{
+.spidey-blanco-footer{
     position: absolute;
     margin-top: 1071px;
     margin-right: 230px;
