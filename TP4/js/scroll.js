@@ -30,9 +30,9 @@ window.onscroll = function() {
 
     // el fondo del nav cambia de color al llegar al fondo violeta
     if (currentScrollPos > 420) {
-        nav.style.backgroundColor = "rgba(64, 160, 219, 1)";
+        nav.style.backgroundColor = "rgba(84, 153, 248, 1)";
     } else {
-        nav.style.backgroundColor = "rgba(64, 160, 219, 0)";
+        nav.style.backgroundColor = "rgba(84, 153, 248, 0)";
     }
 
     //el duende verde va más lento que el scroll
