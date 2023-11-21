@@ -106,7 +106,7 @@
 .spidey-negro-footer{
     position: absolute;
     margin-top: 1135px;
-    margin-right: 820px;
+    margin-right: 780px;
     width: 97px;
     height: 89px;
     z-index: 1;
@@ -115,7 +115,7 @@
 .spidey-rojo-footer{
     position: absolute;
     margin-top: 965px;
-    margin-left: 745px;
+    margin-left: 850px;
     width: 94px;
     height: 88px;
     z-index: 1;
@@ -124,15 +124,13 @@
 .spidey-blanco-footer{
     position: absolute;
     margin-top: 1071px;
-    margin-right: 230px;
+    margin-right: 170px;
     width: 58px;
     height: 64px;
     z-index: 1;
 }
 
-.layer1-footer{
-    background-image: url("../img/footer/layer1-footer.png");
-    background-repeat: no-repeat;
+.layer1-footer img{
     position: absolute;
     width: 100%;
     height: 720px;

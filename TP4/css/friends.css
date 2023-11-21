@@ -3,7 +3,7 @@
 /* --------------- SECTION FRIENDS --------------- */
 .section-friends {
     margin-top: -31px;
-    height: 1785px; /* esto no va (estaba en 1085)*/
+    height: 1650px; /* esto no va (estaba en 1085)*/
     width: 100%;
     display: flex;
     justify-content: center;

@@ -1,0 +1,84 @@
+.bg-spidey{
+    background-color: #ffffff;
+    clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
+}
+
+#bg-spidey{
+    width: 100%;
+}
+
+#card-1{
+    position: absolute;
+    margin-top: -750px;
+    margin-left: -49px;
+    z-index: 20;    
+}
+
+#card-2{
+    position: absolute;
+    margin-top: -610px;
+    margin-left: -65px;
+    z-index: 20;
+} 
+
+#card-3{
+    position: absolute;
+    margin-top: -420px;
+    margin-left: -33px;
+    z-index: 20;
+}
+
+.avengers{
+    margin-bottom: 385px;
+}
+.avengers h1{
+    font-size: 60px;
+    color: #ffffff;
+    width: 667px;
+    font-weight: 400;
+    line-height: 94.5%;
+    margin-bottom: 55.11px;
+    margin-top: 163px;
+}
+
+.bg-avengers{
+    background-repeat: no-repeat;
+    width: 1080px;
+    height: 527.63px;
+}
+
+.bg-1-avengers{
+    background-image: url("../img/vengadores/bg-1.png");
+    position: absolute;
+    z-index: 1;
+}
+
+.bg-2-avengers{
+    background-image: url("../img/vengadores/bg-2.png");
+    position: absolute;
+    z-index: 2;
+}
+.bg-3-avengers{
+    background-image: url("../img/vengadores/bg-3.png");
+    position: absolute;
+    z-index: 3;
+} 
+
+#elastic{
+    position: absolute;
+    margin-left: 26.4px;
+    margin-top: -95.11px;
+}
+
+#vengador{
+    position: absolute;
+    margin-left: 450px;
+    margin-top: -255.11px;
+}
+
+#hulk{
+    position: absolute;
+    margin-left: 670px;
+    margin-top: 105.89px;
+}
+
