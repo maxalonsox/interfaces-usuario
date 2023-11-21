@@ -11,7 +11,39 @@
 /* BACKGROUND */
 .bg-city1, .bg-city2, .bg-city3 {
     z-index: 1;
+    transition: 0.2s all ease;
 }
+
+@keyframes entry-city1 {
+    from {top: 600px}
+    to {top: 144px}
+}
+
+.entry-city1 {
+    animation-name: entry-city1;
+    animation-duration: 0.5s;
+}
+
+@keyframes entry-city2 {
+    from {top: 900px;}
+    to {top: 634px;}
+}
+
+.entry-city2 {
+    animation-name: entry-city2;
+    animation-duration: 0.5s;
+}
+
+@keyframes entry-city3 {
+    from {top: 600px;}
+    to {top: 126px;}
+}
+
+.entry-city3 {
+    animation-name: entry-city3;
+    animation-duration: 0.5s;
+}
+
 
 .bg-city1 {
     position: absolute;
@@ -43,6 +75,7 @@
     width: 100%;
     position: fixed;
     z-index: 100;
+    transition: 0.8s all ease-out;
 }
 
 .content-nav {
@@ -96,55 +129,124 @@
     justify-content: center;
 }
 
+.container-title a {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes entry-title {
+    from {top: -4000px;}
+    to {top: 91px;}
+}
+
+.entry-title {
+    animation-name: entry-title;
+    animation-duration: 2.8s;
+}
+
 .title {
-    height: 301px;
     width: 590px;
     margin-right: 30px;
-    margin-top: 91px;
-    position: absolute;
+    top: 91px;
+    position: fixed;
     z-index: 100;
+    transition: 0.5s all ease;
 }
 
 .characters {
     width: 100%;
+    height: 868px;
     display: flex;
 }
 
 .spiderman-1-hero, .spiderman-2-hero, .spiderman-3-hero {
     z-index: 50;
+    position: absolute;
+    transition: 0.2s all ease;
+}
+
+@keyframes entry1 {
+    from {margin-left:-1800px;}
+    to {margin-left: -10px;}
+}
+
+.entry1 {
+    animation-name: entry1;
+    animation-duration: 1.3s;
+}
+
+@keyframes entry2 {
+    from {margin-left: 3000px;}
+    to {margin-left: 595px}
+}
+
+.entry2 {
+    animation-name: entry2;
+    animation-duration: 1.6s;
+}
+
+@keyframes entry3 {
+    from {top: -2000px;}
+    to {top: 403px;}
+}
+
+.entry3 {
+    animation-name: entry3;
+    animation-duration: 1.8s;
 }
 
 .spiderman-1-hero {
+    top: 388px;
     margin-left: -10px;
     height: 444px;
-    margin-top: 388px;
 }
 
 .spiderman-2-hero {
-    margin-left: -46px;
-    margin-top: 403px;
+    top: 403px;
+    margin-left: 304px;
     height: 465px;
 }
 
 .spiderman-3-hero {
-    margin-left: -174px;
-    margin-top: 335px;
+    top: 335px;
+    margin-left: 595px;
     height: 393px;
 }
 
-.spiderweb1, .spiderweb2 {
+.spiderweb-1, .spiderweb-2 {
     position: absolute;
     z-index: 60;
     object-fit: fill;
 }
 
-.spiderweb1 {
+@keyframes entry-spiderweb1 {
+    from {left: -60000px;}
+    to {left: 0;}
+}
+
+.entry-spiderweb1 {
+    animation-name: entry-spiderweb1;
+    animation-duration: 1.6s;
+}
+
+@keyframes entry-spiderweb2 {
+    from {right: -60000px;}
+    to {right: 0;}
+}
+
+.entry-spiderweb2 {
+    animation-name: entry-spiderweb2;
+    animation-duration: 1.8s;
+}
+
+.spiderweb-1 {
     top: 400px;
     left: 0;
     height: 627.27px;
 }
 
-.spiderweb2 {
+.spiderweb-2 {
     top: 340px;
     right: 0;
     width: 372.44px;
