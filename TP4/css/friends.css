@@ -24,6 +24,7 @@
 .container-info-goblin {
     display: flex;
     width: 100%;
+    margin-bottom: 100px;
 }
 
 .section-friends .content {
@@ -52,15 +53,16 @@
 }
 
 .img-videogame {
-    position: absolute;
     margin-left: -20px;
 }
 
 .green-goblin {
-    height: 921px;
-    margin-top: -87px;
-    margin-left: -29px;
+    position: absolute;
+    width: 553px;
+    top: -130px;
+    left: 610px;
     z-index: 40;
+    transition: 0.3s all ease;
 }
 
 /* CARDS */
