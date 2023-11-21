@@ -12,13 +12,12 @@
 
 /* BACKGROUND-VIOLET */
 .bg-violet-friends {
-    position: absolute;
-    top: 754px;
-    height: 636px;
-    border-top: 79px solid transparent;
-    border-right: 100vw solid #8F6AA6;
-    border-bottom: 129.5px solid transparent;
+    background-color: #8F6AA6;
+    height: 844.5px;
+    width: 100%;
+    clip-path: polygon(0 79px, 100% 0, 100% 100%, 0 715px);
     z-index: 30;
+    margin-top: -79px;
 }
 
 /* CONTENT */
