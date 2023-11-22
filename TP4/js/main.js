@@ -1,10 +1,10 @@
 "Use strict"
 
-// window.addEventListener("load", () => {
+window.addEventListener("load", () => {
 
-//     setTimeout(NavigateTo, 5000);
+    setTimeout(NavigateTo, 5000);
 
-//     function NavigateTo(){
-//         location.href = './page.html'
-//     }
-// });
+    function NavigateTo(){
+        location.href = './page.html'
+    }
+});
