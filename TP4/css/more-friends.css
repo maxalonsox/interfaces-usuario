@@ -22,14 +22,48 @@
     width: 1080px;
     margin-top: 380px;
 }
-
 .container-scroll .container-img-more{
+    width: 548px;
+    height: 1650px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+}
+
+.container-scroll .container-img-more-2{
+    width: 100%;
+    height: 302px;
+    top: 150px;
+    position: sticky;
+    display: flex;
+    justify-content: center;
+}
+
+.img-more{
+    position: absolute;
+    width: 100%;
     height: 100%;
-    width: 556px;
-    overflow: hidden;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+}
+
+#more-1{
+    background-image: url("../img/more-friends/more-1.png");
+}
+
+#more-2{
+    background-image: url("../img/more-friends/more-2.png");
+}
+
+#more-3{
+    background-image: url("../img/more-friends/more-3.png");
+}
+
+#more-4{
+    background-image: url("../img/more-friends/more-4.png");
+}
+
+.mostrar-img-more {
+    z-index: 1;
+    opacity: 1;
 }
 
 .container-scroll .container-text-more{
