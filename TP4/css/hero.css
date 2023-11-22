@@ -121,6 +121,15 @@
     -webkit-text-stroke: 1.5px #02187E;
 }
 
+.btn-comprar:hover{
+    cursor: pointer;
+    background-color: #2981FF;
+    border: 8px solid #FFE901;
+    -webkit-text-stroke: 1px #ffffff;
+    box-shadow: 0px 0px #02187E;
+    transition: 1s;
+} 
+
 /* CONTENT */
 
 .container-title {
