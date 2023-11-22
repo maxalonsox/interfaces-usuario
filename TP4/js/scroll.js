@@ -9,6 +9,9 @@ const spiderweb2 = document.getElementById("spiderweb-2"); //telaraña derecha
 const spiderman1 = document.getElementById("spiderman-1"); //spiderman izquierda
 const spiderman2 = document.getElementById("spiderman-2"); //spiderman centro
 const spiderman3 = document.getElementById("spiderman-3"); //spiderman derecha
+const card1 = document.getElementById("card-1") //card 1 section 3
+const card2 = document.getElementById("card-2") //card 2 section 3
+const card3 = document.getElementById("card-3") //card 3 section 3
 
 
 window.onscroll = function() {
@@ -37,7 +40,7 @@ window.onscroll = function() {
 
     //el duende verde va más lento que el scroll
     goblin.style.marginTop = -87 + currentScrollPos * 0.1 + "px";
-
+    
     //al top de cada elemento se le suma un porcentaje de la posición del scroll así se genera el efecto parallax
     city1.style.top = 144 + currentScrollPos * 0.4 + "px";
     city2.style.top = 634 + currentScrollPos * 0.5 + "px";
@@ -47,4 +50,9 @@ window.onscroll = function() {
     spiderman3.style.top = 335 + currentScrollPos * 0.08 + "px";
     spiderweb1.style.top = 400 + currentScrollPos * 0.03 + "px";
     spiderweb2.style.top = 340 + currentScrollPos * 0.08 + "px";
+
+    //las cards se mueven a destiempo
+    card1.style.marginTop = -900 + currentScrollPos * 0.07 + "px";
+    card2.style.marginTop = -750 + currentScrollPos * 0.07 + "px";
+    card3.style.marginTop = -600 + currentScrollPos * 0.07 + "px";
 }

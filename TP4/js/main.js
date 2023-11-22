@@ -7,4 +7,4 @@ window.addEventListener("load", () => {
     function NavigateTo(){
         location.href = './page.html'
     }
-});
+}); 
