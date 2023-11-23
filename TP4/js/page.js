@@ -7,7 +7,8 @@ const spideyRed = document.querySelector(".spidey-red-more");
 const spideyBlack = document.querySelector(".spidey-black-more");
 const spiders = [spideyBlack, spideyRed, spideyWhite]; 
 let bgMoreFriends = document.querySelector(".bg3-more-friends");
-let borderBgMoreFriends = document.querySelector(".border-bg-more-friends");
+let borderTopBgMore = document.querySelector(".borderTop-bg-more-friends");
+let borderBottomBgMore = document.querySelector(".borderBottom-bg-more-friends");
 
 //agrega los eventos a cada spider
 
@@ -35,7 +36,8 @@ function removeClassSpidey(){
         s.classList.remove("spidey-small");
     });
     bgMoreFriends.style.backgroundColor = '#ffffff'
-    borderBgMoreFriends.style.backgroundColor = '#ffffff'
+    borderTopBgMore.style.backgroundColor = '#ffffff'
+    borderBottomBgMore.style.backgroundColor = '#ffffff'
 };
 
 // funcion para agregar la clases al spider que se le hizo hover 
@@ -52,15 +54,18 @@ const addClassSpidey = (spider) => {
     switch (spider) {
         case spideyWhite:
             bgMoreFriends.style.backgroundColor = '#FFD3F0';
-            borderBgMoreFriends.style.backgroundColor = '#C92B94'
+            borderTopBgMore.style.backgroundColor = '#C92B94';
+            borderBottomBgMore.style.backgroundColor = '#C92B94';
         break;
         case spideyRed:
             bgMoreFriends.style.backgroundColor = '#D1DEFF';
-            borderBgMoreFriends.style.backgroundColor = '#3D6CE7'
+            borderTopBgMore.style.backgroundColor = '#3D6CE7'
+            borderBottomBgMore.style.backgroundColor = '#3D6CE7'
         break;
         case spideyBlack:
             bgMoreFriends.style.backgroundColor = '#D1D1D1';
-            borderBgMoreFriends.style.backgroundColor = '#304C71'
+            borderTopBgMore.style.backgroundColor = '#304C71'
+            borderBottomBgMore.style.backgroundColor = '#304C71'
         break;
     }
 };
@@ -78,8 +83,8 @@ btnMenu.addEventListener('click', () => {
 
 // cuando hace el hover a las cards de la seccion Ghost spider los posiciona mas atras
 card1.addEventListener('mouseover', () => {
-    card2.style.scale = "0.7";
-    card3.style.scale = "0.7";
+    card2.style.scale = "0.9";
+    card3.style.scale = "0.9";
 });
 
 card1.addEventListener('mouseout', () => {
@@ -88,8 +93,8 @@ card1.addEventListener('mouseout', () => {
 });
 
 card2.addEventListener('mouseover', () => {
-    card1.style.scale = "0.7";
-    card3.style.scale = "0.7";
+    card1.style.scale = "0.9";
+    card3.style.scale = "0.9";
 });
 
 card2.addEventListener('mouseout', () => {
@@ -98,8 +103,8 @@ card2.addEventListener('mouseout', () => {
 });
 
 card3.addEventListener('mouseover', () => {
-    card1.style.scale = "0.7";
-    card2.style.scale = "0.7";
+    card1.style.scale = "0.9";
+    card2.style.scale = "0.9";
 });
 
 card3.addEventListener('mouseout', () => {

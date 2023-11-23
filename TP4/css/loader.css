@@ -9,7 +9,7 @@ body {
   margin: 0;
 }
 
-/* SPIDEY */
+/* SPRITE SPIDEY */
 
 .container-sprite{
   position: absolute;
@@ -20,7 +20,7 @@ body {
 
 .sprite{
   display: inline-block;
-  background-image: url("../img/loader/sprite.png");
+  background-image: url("../img/sprite/sprite-loader.png");
   background-repeat: no-repeat;
   background-position: -250px 0;
   width: 45px;

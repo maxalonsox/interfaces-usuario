@@ -103,6 +103,50 @@
     margin-right: 436px;
 }
 
+/* SPRITE SPIDER */
+
+.sprite{
+    position: absolute;
+    top: 8000px;
+    display: inline-block;
+    background-image: url("../img/sprite/sprite-footer.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0;
+    width: 46px;
+    height: 53px;
+    scale: 1.5;
+    animation: 
+        vuelta .8s steps(5),
+        agarre 1.5s steps(6) .8s;
+}
+
+@keyframes vuelta{
+    from{
+        margin-top: 0px;
+        left: 0px;
+        background-position: 0px 0px;
+    }
+    to{
+        margin-top: 150px;
+        left: 150px;
+        background-position: -250px 0px;
+    }
+}
+
+@keyframes agarre{
+    from{
+        margin-top: 150px;
+        left: 150px;
+        background-position: -250px 0px;
+    }
+    to{
+        margin-top: -100px;
+        left: 1500px;
+        background-position: -541px 0px;
+    }
+}
+
+/* 
 .spidey-negro-footer{
     position: absolute;
     margin-top: 1135px;
@@ -128,7 +172,7 @@
     width: 58px;
     height: 64px;
     z-index: 1;
-}
+} */
 
 .layer1-footer img{
     position: absolute;
