@@ -54,7 +54,7 @@ window.onscroll = function() {
   spiderman2.style.top = 403 + currentScrollPos * 0.03 + "px";
   spiderman3.style.top = 335 + currentScrollPos * 0.08 + "px";
   spiderweb1.style.top = 400 + currentScrollPos * 0.03 + "px";
-  spiderweb2.style.top = 340 + currentScrollPos * 0.08 + "px";
+  spiderweb2.style.top = 388 + currentScrollPos * 0.08 + "px";
 
   //las cards se mueven a destiempo
   card1.style.marginTop = -900 + currentScrollPos * 0.07 + "px";

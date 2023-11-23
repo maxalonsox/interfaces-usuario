@@ -226,13 +226,15 @@
 .spiderweb-1 {
     top: 400px;
     left: 0;
+    width: 450.82px;
     height: 627.27px;
     animation: entry-spiderweb1 1.6s;
 }
 
 .spiderweb-2 {
-    top: 340px;
+    top: 388px;
     right: 0;
-    width: 372.44px;
+    width: 256.66px;
+    height: 372.44px;
     animation: entry-spiderweb2 1.8s;
 }
