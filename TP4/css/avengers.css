@@ -9,7 +9,7 @@
 
 #card-1{
     position: absolute;
-    margin-top: -750px;
+    margin-top: -780px;
     margin-left: -49px;
     z-index: 20;
     transition: 1s;
@@ -35,7 +35,7 @@
 #card-1:hover, #card-2:hover, #card-3:hover{
     z-index: 22;
     transition: 1s;
-    transform: translateX(30px) scale(1.05);
+    transform: translateX(30px) scale(1.1);
 }
 
 #card-1:hover {

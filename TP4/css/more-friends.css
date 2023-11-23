@@ -119,6 +119,7 @@
     display: block;
     z-index: 2;
     clip-path: polygon(0 132px, 100% 0, 100% 100%, 0 100%);
+    transition: 1s;
 }
 
 .border-bg-more-friends{
@@ -129,6 +130,7 @@
     display: block;
     z-index: 5;
     clip-path: polygon(0 132px, 100% 0, 100% 38px, 0 100%);
+    transition: 1s;
 }
 
 .bg-opacity{

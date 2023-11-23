@@ -9,9 +9,10 @@ const spiderweb2 = document.getElementById("spiderweb-2"); //telaraña derecha
 const spiderman1 = document.getElementById("spiderman-1"); //spiderman izquierda
 const spiderman2 = document.getElementById("spiderman-2"); //spiderman centro
 const spiderman3 = document.getElementById("spiderman-3"); //spiderman derecha
-const card1 = document.getElementById("card-1"); //card 1 section 3
-const card2 = document.getElementById("card-2"); //card 2 section 3
-const card3 = document.getElementById("card-3"); //card 3 section 3
+const cardsSpiders = document.querySelectorAll('.container-card'); // cards seccion 3 personajes
+const card1 = document.getElementById("card-1"); //card 1 seccion Ghost spider
+const card2 = document.getElementById("card-2"); //card 2 seccion Ghost spider
+const card3 = document.getElementById("card-3"); //card 3 seccion Ghost spider
 const imgsMore = document.querySelectorAll(".img-more"); // Todas las img de la seccion more friends
 const img1More = document.querySelector("#more-1"); //img 1 de la seccion more-friends
 const img2More = document.querySelector("#more-2"); //img 2 de la seccion more-friends
@@ -55,6 +56,13 @@ window.onscroll = function() {
   spiderman3.style.top = 335 + currentScrollPos * 0.08 + "px";
   spiderweb1.style.top = 400 + currentScrollPos * 0.03 + "px";
   spiderweb2.style.top = 388 + currentScrollPos * 0.08 + "px";
+  
+  //agrega la clase a las cards de la seccion friends para que aparezcan flotadas
+  if(currentScrollPos > 1200){
+    cardsSpiders.forEach(card => {
+      card.classList.add("flotado");
+    });
+  }
 
   //las cards se mueven a destiempo
   card1.style.marginTop = -900 + currentScrollPos * 0.07 + "px";
