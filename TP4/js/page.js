@@ -1,5 +1,7 @@
 'Use strict'
 
+const btnMenu = document.getElementById("btn-menu");
+const menu = document.getElementById("menu");
 const spideyWhite = document.querySelector(".spidey-white-more");
 const spideyRed = document.querySelector(".spidey-red-more");
 const spideyBlack = document.querySelector(".spidey-black-more");
@@ -59,3 +61,43 @@ const addClassSpidey = (spider) => {
     }
 };
 
+// cuando el botón de menú es clickeado agrega o quita la clase 'active' al botón y al menú desplegable
+btnMenu.addEventListener('click', () => {
+    if (btnMenu.classList.contains('active')) {
+        btnMenu.classList.remove('active');
+        menu.classList.remove('active');
+    } else {
+        btnMenu.classList.add('active');
+        menu.classList.add('active');
+    }
+});
+
+card1.addEventListener('mouseover', () => {
+    card2.style.scale = "0.5";
+    card3.style.scale = "0.5";
+});
+
+card1.addEventListener('mouseout', () => {
+    card2.style.scale = "1";
+    card3.style.scale = "1";
+});
+
+card2.addEventListener('mouseover', () => {
+    card1.style.scale = "0.5";
+    card3.style.scale = "0.5";
+});
+
+card2.addEventListener('mouseout', () => {
+    card1.style.scale = "1";
+    card3.style.scale = "1";
+});
+
+card3.addEventListener('mouseover', () => {
+    card1.style.scale = "0.5";
+    card2.style.scale = "0.5";
+});
+
+card3.addEventListener('mouseout', () => {
+    card1.style.scale = "1";
+    card2.style.scale = "1";
+});

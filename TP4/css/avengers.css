@@ -11,7 +11,7 @@
     position: absolute;
     margin-top: -750px;
     margin-left: -49px;
-    z-index: 20;    
+    z-index: 20;
     transition: 1s;
 }
 
@@ -35,7 +35,15 @@
 #card-1:hover, #card-2:hover, #card-3:hover{
     z-index: 22;
     transition: 1s;
-    scale: 1.1;
+    transform: translateX(30px) scale(1.05);
+}
+
+#card-1:hover {
+    transform: translateY(-30px);
+}
+
+#card-3:hover {
+    transform: translateY(30px);
 }
 
 .avengers{
