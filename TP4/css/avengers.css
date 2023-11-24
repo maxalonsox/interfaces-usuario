@@ -36,6 +36,7 @@
     z-index: 22;
     transition: 1s;
     transform: translateX(30px) scale(1.1);
+    rotate: 20deg;
 }
 
 #card-1:hover {

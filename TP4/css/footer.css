@@ -116,8 +116,8 @@
     height: 53px;
     scale: 1.5;
     animation: 
-        vuelta .8s steps(5),
-        agarre 1.5s steps(6) .8s;
+        vuelta .6s steps(5),
+        agarre 1s steps(6) .6s;
 }
 
 @keyframes vuelta{

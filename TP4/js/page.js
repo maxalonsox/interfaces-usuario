@@ -9,6 +9,10 @@ const spiders = [spideyBlack, spideyRed, spideyWhite];
 let bgMoreFriends = document.querySelector(".bg3-more-friends");
 let borderTopBgMore = document.querySelector(".borderTop-bg-more-friends");
 let borderBottomBgMore = document.querySelector(".borderBottom-bg-more-friends");
+const spritesheetFooter = document.getElementById('spritesheet-footer');
+let peterParker = document.querySelector("#peter-parker");
+let milesMorales = document.querySelector("#miles-morales");
+let gwenStacy = document.querySelector("#gwen-stacy");
 
 //agrega los eventos a cada spider
 
@@ -110,4 +114,49 @@ card3.addEventListener('mouseover', () => {
 card3.addEventListener('mouseout', () => {
     card1.style.scale = "1";
     card2.style.scale = "1";
+});
+
+// aplicar la clase para que se vea el spritesheet del footer
+
+// cada 5 segundos se llame a runSpriteFooter
+setInterval(runSpriteFooter, 5000);
+
+function runSpriteFooter(){
+
+    // agrega la clase para que se vea la animacion
+    spritesheetFooter.classList.add('sprite');
+
+    // a los 1.55 segundos de iniciada la animacion se borra la clase
+    setTimeout(()=>{
+        spritesheetFooter.classList.remove('sprite');
+    }, 1550)
+}
+
+// pop up personajes
+
+// peter parker
+spideyRed.addEventListener("click", ()=>{
+    peterParker.showModal();
+});
+
+document.querySelector("#cerrar-peter").addEventListener("click", ()=>{
+    peterParker.close();
+});
+
+// miles morales
+spideyBlack.addEventListener("click", ()=>{
+    milesMorales.showModal();
+});
+
+document.querySelector("#cerrar-miles").addEventListener("click", ()=>{
+    milesMorales.close();
+});
+
+// gwen stacy
+spideyWhite.addEventListener("click", ()=>{
+    gwenStacy.showModal();
+});
+
+document.querySelector("#cerrar-gwen").addEventListener("click", ()=>{
+    gwenStacy.close();
 });

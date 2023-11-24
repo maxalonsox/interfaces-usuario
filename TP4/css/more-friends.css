@@ -149,16 +149,6 @@
     top: 248px;
 }
 
-.spidey-white-more{
-    width: 268px;
-    height: 416.5px;
-    position: absolute; 
-    margin-top: 171.14px;
-    margin-left: 90px;
-    transition: 1s;
-
-}
-
 .spidey:hover{
     scale: 1.2;
     transition: 1s;
@@ -170,6 +160,16 @@
     filter: blur(5px);
 }
 
+.spidey-white-more{
+    width: 268px;
+    height: 416.5px;
+    position: absolute; 
+    margin-top: 171.14px;
+    margin-left: 90px;
+    transition: 1s;
+
+}
+
 .spidey-red-more{
     width: 416.5px;
     height: 457.5px;
@@ -177,7 +177,6 @@
     margin-top: 180.14px;
     margin-left: 294px;
     transition: 1s;
-
 }
 
 .spidey-black-more{
@@ -188,3 +187,65 @@
     margin-left: 677px;
     transition: 1s;
 }
+
+/* Pop up personajes */
+
+dialog::-webkit-scrollbar{
+    display: none;
+}
+
+.container-personaje{
+    display: flex;
+}
+
+.info-personaje{
+    position: absolute;
+    height: 715px;
+    width: 600px;
+    margin-left: 404px;
+    margin-top: 58px;
+}
+
+.img-personaje{
+    width: 284px;
+    height: 715px;
+    margin-left: 61px;
+    margin-top: 58px;
+}
+
+.info-personaje h3{
+    color:#ffffff;
+    font-size: 60px;
+} 
+
+.info-personaje p{
+    color:#ffffff;
+    font-size: 20px;
+    width: 724px;
+    margin-top: 10px;
+}
+
+.info-personaje p span{
+    margin-left: 22px;
+}
+
+.cerrar-popUp-personaje{
+    position: absolute;
+    height: 89px;
+    width: 89px;
+    margin-left: 1156px;
+    margin-top: 28px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.spideys-more dialog{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+
+
+
